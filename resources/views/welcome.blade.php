@@ -4,8 +4,102 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <title>Just Fucking Use PHP</title>
-        <meta name="description" content="The language that powers 77% of the web has been completely reborn.">
+        <!-- Primary Meta Tags -->
+        <title>Why PHP in 2026? Modern PHP is Type-Safe, Fast & Beautiful | whyphp.dev</title>
+        <meta name="title" content="Why PHP in 2026? Modern PHP is Type-Safe, Fast & Beautiful">
+        <meta name="description" content="PHP powers 77% of the web and has been completely reborn. Modern PHP features JIT compilation, enums, readonly properties, fibers, and TypeScript-level type safety. Learn why developers are choosing PHP in 2026.">
+        <meta name="keywords" content="PHP, modern PHP, PHP 8, PHP 8.5, Laravel, Symfony, web development, programming language, type-safe PHP, PHP tutorial, learn PHP, PHP framework, Composer, PHPStan, Pest">
+        <meta name="author" content="Nuno Maduro">
+        <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+        <meta name="googlebot" content="index, follow">
+        <meta name="language" content="English">
+        <meta name="revisit-after" content="7 days">
+
+        <!-- Canonical -->
+        <link rel="canonical" href="https://whyphp.dev">
+
+        <!-- Open Graph / Facebook -->
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="https://whyphp.dev">
+        <meta property="og:site_name" content="Why PHP">
+        <meta property="og:title" content="Why PHP in 2026? Modern PHP is Type-Safe, Fast & Beautiful">
+        <meta property="og:description" content="PHP powers 77% of the web and has been completely reborn. Modern PHP features JIT compilation, enums, readonly properties, and TypeScript-level type safety.">
+        <meta property="og:image" content="https://whyphp.dev/og-image.png">
+        <meta property="og:image:width" content="1200">
+        <meta property="og:image:height" content="630">
+        <meta property="og:image:alt" content="Why PHP in 2026? - Modern PHP is Type-Safe, Fast & Beautiful">
+        <meta property="og:locale" content="en_US">
+
+        <!-- Twitter -->
+        <meta name="twitter:card" content="summary_large_image">
+        <meta name="twitter:site" content="@@enunomaduro">
+        <meta name="twitter:creator" content="@@enunomaduro">
+        <meta name="twitter:url" content="https://whyphp.dev">
+        <meta name="twitter:title" content="Why PHP in 2026? Modern PHP is Type-Safe, Fast & Beautiful">
+        <meta name="twitter:description" content="PHP powers 77% of the web and has been completely reborn. Modern PHP features JIT compilation, enums, readonly properties, and TypeScript-level type safety.">
+        <meta name="twitter:image" content="https://whyphp.dev/og-image.png">
+        <meta name="twitter:image:alt" content="Why PHP in 2026? - Modern PHP is Type-Safe, Fast & Beautiful">
+
+        <!-- Structured Data / JSON-LD -->
+        <script type="application/ld+json">
+        {
+            "@@context": "https://schema.org",
+            "@@type": "WebSite",
+            "name": "Why PHP",
+            "alternateName": ["whyphp.dev", "Why PHP in 2026"],
+            "url": "https://whyphp.dev",
+            "description": "PHP powers 77% of the web and has been completely reborn. Modern PHP features JIT compilation, enums, readonly properties, and TypeScript-level type safety.",
+            "author": {
+                "@@type": "Person",
+                "name": "Nuno Maduro",
+                "url": "https://twitter.com/enunomaduro"
+            },
+            "about": {
+                "@@type": "ComputerLanguage",
+                "name": "PHP",
+                "url": "https://php.net"
+            },
+            "keywords": "PHP, modern PHP, PHP 8, Laravel, Symfony, web development, programming"
+        }
+        </script>
+        <script type="application/ld+json">
+        {
+            "@@context": "https://schema.org",
+            "@@type": "FAQPage",
+            "mainEntity": [
+                {
+                    "@@type": "Question",
+                    "name": "Why should I use PHP in 2026?",
+                    "acceptedAnswer": {
+                        "@@type": "Answer",
+                        "text": "Modern PHP has been completely reborn with JIT compilation, fibers, enums, attributes, readonly properties, and a type system that rivals TypeScript. It powers 77% of the web including WordPress, Laravel, and Symfony."
+                    }
+                },
+                {
+                    "@@type": "Question",
+                    "name": "Is PHP still relevant?",
+                    "acceptedAnswer": {
+                        "@@type": "Answer",
+                        "text": "Absolutely. PHP powers 77% of the web. Modern PHP features TypeScript-level type safety, Jest-level testing with Pest, and Rust-level tooling. Major platforms like WordPress, Facebook, and Wikipedia run on PHP."
+                    }
+                },
+                {
+                    "@@type": "Question",
+                    "name": "How do I install PHP?",
+                    "acceptedAnswer": {
+                        "@@type": "Answer",
+                        "text": "Visit php.new for one-command installation on macOS, Windows, or Linux. Then use Laravel, the most popular PHP framework, to build your first application."
+                    }
+                }
+            ]
+        }
+        </script>
+
+        <!-- Theme -->
+        <meta name="theme-color" content="#7A86E8">
+        <meta name="msapplication-TileColor" content="#7A86E8">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 
         <link rel="preconnect" href="https://fonts.bunny.net">
         <link href="https://fonts.bunny.net/css?family=space-grotesk:400,500,600,700&family=jetbrains-mono:400,700" rel="stylesheet" />
@@ -50,7 +144,11 @@
             }
 
             .nav a:hover {
-                color: #a855f7;
+                color: #7A86E8;
+            }
+
+            .nav-sep {
+                color: #3f3f46;
             }
 
             h1 {
@@ -63,11 +161,11 @@
             }
 
             h1 .highlight {
-                color: #a855f7;
+                color: #7A86E8;
             }
 
             .subtitle {
-                font-size: 1.5rem;
+                font-size: 1.25rem;
                 color: #71717a;
                 margin-bottom: 3rem;
             }
@@ -93,7 +191,7 @@
             }
 
             a {
-                color: #a855f7;
+                color: #7A86E8;
                 text-decoration: underline;
                 text-underline-offset: 3px;
             }
@@ -109,7 +207,7 @@
             }
 
             blockquote {
-                border-left: 3px solid #a855f7;
+                border-left: 3px solid #7A86E8;
                 padding-left: 1.5rem;
                 margin: 2rem 0;
                 font-style: italic;
@@ -161,15 +259,24 @@
             }
 
             .tool {
+                display: block;
                 padding: 1rem;
                 background: #18181b;
                 border-radius: 8px;
                 border: 1px solid #27272a;
+                text-decoration: none;
+                transition: border-color 0.2s, background 0.2s;
+            }
+
+            .tool:hover {
+                border-color: #7A86E8;
+                background: #1f1f23;
             }
 
             .tool strong {
                 display: block;
                 margin-bottom: 0.25rem;
+                color: #fafafa;
             }
 
             .tool span {
@@ -177,28 +284,135 @@
                 color: #71717a;
             }
 
-            .start-option {
-                margin: 1.5rem 0;
-                padding: 1.5rem;
-                background: #18181b;
-                border-radius: 8px;
+            .os-selector {
+                display: flex;
+                gap: 0.5rem;
+                margin: 1.5rem 0 1rem;
+            }
+
+            .os-tab {
+                padding: 0.5rem 1rem;
+                background: transparent;
                 border: 1px solid #27272a;
+                border-radius: 6px;
+                color: #71717a;
+                font-family: 'JetBrains Mono', monospace;
+                font-size: 0.875rem;
+                cursor: pointer;
+                transition: all 0.2s;
             }
 
-            .start-option strong {
-                font-size: 1.125rem;
+            .os-tab:hover {
+                border-color: #3f3f46;
+                color: #a1a1aa;
             }
 
-            .start-option p {
-                margin: 0.5rem 0 1rem;
-                font-size: 0.95rem;
+            .os-tab.active {
+                background: #7A86E8;
+                border-color: #7A86E8;
+                color: #fff;
             }
 
-            .start-option code {
+            .os-commands {
+                margin: 1rem 0;
+            }
+
+            .os-commands.hidden {
+                display: none;
+            }
+
+            .command-step {
+                margin: 1rem 0;
+            }
+
+            .step-label {
                 display: block;
-                margin-top: 0.5rem;
-                font-size: 0.8rem;
-                color: #a855f7;
+                font-size: 0.875rem;
+                color: #71717a;
+                margin-bottom: 0.5rem;
+            }
+
+            .code-block {
+                position: relative;
+            }
+
+            .code-block pre {
+                margin: 0;
+            }
+
+            .copy-btn {
+                position: absolute;
+                top: 0.75rem;
+                right: 0.75rem;
+                padding: 0.4rem 0.6rem;
+                background: #27272a;
+                border: 1px solid #3f3f46;
+                border-radius: 4px;
+                color: #71717a;
+                font-family: 'JetBrains Mono', monospace;
+                font-size: 0.75rem;
+                cursor: pointer;
+                transition: all 0.2s;
+            }
+
+            .copy-btn:hover {
+                background: #3f3f46;
+                color: #a1a1aa;
+            }
+
+            .copy-btn.copied {
+                background: #7A86E8;
+                border-color: #7A86E8;
+                color: #fff;
+            }
+
+            .directory {
+                margin: 3rem 0;
+            }
+
+            .directory h3 {
+                margin-bottom: 1rem;
+            }
+
+            .directory-grid {
+                display: grid;
+                grid-template-columns: repeat(2, 1fr);
+                gap: 0.5rem 2rem;
+                font-size: 0.9rem;
+            }
+
+            .directory-grid a {
+                color: #71717a;
+                text-decoration: none;
+                transition: color 0.2s;
+            }
+
+            .directory-grid a:hover {
+                color: #7A86E8;
+            }
+
+            @media (max-width: 640px) {
+                .directory-grid {
+                    grid-template-columns: 1fr;
+                }
+            }
+
+            .video-embed {
+                position: relative;
+                width: 100%;
+                padding-bottom: 56.25%;
+                margin: 2rem 0;
+                border-radius: 8px;
+                overflow: hidden;
+            }
+
+            .video-embed iframe {
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                border: none;
             }
 
             footer {
@@ -216,7 +430,15 @@
             }
 
             footer a:hover {
-                color: #a855f7;
+                color: #7A86E8;
+            }
+
+            .footer-row {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                flex-wrap: wrap;
+                gap: 1rem;
             }
 
             .footer-links {
@@ -240,7 +462,7 @@
         <div class="container">
             <nav class="nav">
                 <a href="#evolution">The Evolution</a>
-                <a href="#tools">Tools</a>
+                <span class="nav-sep">·</span>
                 <a href="#start">Start</a>
             </nav>
 
@@ -266,73 +488,71 @@
 
                 <p>Modern PHP isn't just better. It's unrecognizable from its past.</p>
 
-                <h3>It Just Works™</h3>
-                <p>No webpack config nightmares. No fighting with bundlers. No waiting for builds. Deploy anywhere, scale infinitely. PHP's pragmatic simplicity isn't a weakness—it's the whole fucking point.</p>
-
-                <h3>Planet-Scale Proven</h3>
-                <p>Facebook, Wikipedia, WordPress, Slack, Etsy—billions of requests daily. When you need reliability at scale, PHP delivers. It's not theoretical. It's battle-tested for 30 years.</p>
-
-                <h3>Modern Language Features</h3>
-                <p>PHP 8.5 ships with everything you need:</p>
-
-                <pre><code>&lt;?php
-
-readonly class User
-{
-    public function __construct(
-        public string $name,
-        public Email $email,
-        public Role $role = Role::User,
-    ) {}
-}
-
-$users = $repository
-    ->query()
-    ->where('active', true)
-    ->get()
-    ->map(fn (User $user) => $user->name);</code></pre>
-
-                <p>Clean. Typed. Expressive. No semicolon drama, no indentation wars. Just readable code.</p>
-            </section>
-
-            <section id="tools">
-                <h2>World-Class Tools</h2>
-
-                <p>The PHP ecosystem in 2026 rivals anything out there:</p>
-
                 <div class="tools">
-                    <div class="tool">
-                        <strong>Composer</strong>
-                        <span>Cargo/npm for PHP</span>
-                    </div>
-                    <div class="tool">
-                        <strong>Pest</strong>
-                        <span>Jest-style testing</span>
-                    </div>
-                    <div class="tool">
-                        <strong>PHPStan</strong>
-                        <span>TypeScript-like type safety</span>
-                    </div>
-                    <div class="tool">
-                        <strong>Rector</strong>
-                        <span>Automated refactoring</span>
-                    </div>
-                    <div class="tool">
+                    <a href="https://laravel.com" target="_blank" class="tool">
                         <strong>Laravel</strong>
                         <span>Rails/Next.js for PHP</span>
-                    </div>
-                    <div class="tool">
-                        <strong>FrankenPHP</strong>
-                        <span>Modern app server</span>
-                    </div>
+                    </a>
+                    <a href="https://getcomposer.org" target="_blank" class="tool">
+                        <strong>Composer</strong>
+                        <span>Cargo/npm for PHP</span>
+                    </a>
+                    <a href="https://phpstan.org" target="_blank" class="tool">
+                        <strong>PHPStan</strong>
+                        <span>TypeScript-like type safety</span>
+                    </a>
+                    <a href="https://pestphp.com" target="_blank" class="tool">
+                        <strong>Pest</strong>
+                        <span>Jest-style testing</span>
+                    </a>
+                    <a href="https://laravel.com/docs/pint" target="_blank" class="tool">
+                        <strong>Pint</strong>
+                        <span>Code style fixer</span>
+                    </a>
+                    <a href="https://getrector.com" target="_blank" class="tool">
+                        <strong>Rector</strong>
+                        <span>Automated refactoring</span>
+                    </a>
                 </div>
 
-                <p>PHPStan at level max catches bugs before runtime. Pest ensures 100% type coverage. Rector upgrades your entire codebase automatically. This isn't your grandfather's PHP.</p>
-
-                <blockquote>
-                    PHP 8.5 with JIT is 3x faster than Python, Ruby, and often Node.js. Backed by the PHP Foundation and industry giants with annual releases like clockwork.
-                </blockquote>
+                <p>The PHP ecosystem in 2026 rivals anything out there. TypeScript-level type safety. Jest-level testing. Rust-level tooling. This isn't your grandfather's PHP.</p>
             </section>
+
+            <div class="break">• • •</div>
+
+            <section id="modern">
+                <h2>Still think PHP is a joke?</h2>
+
+                <p>So did we. Then we actually looked at it. Type-safe. Expressive. Modern. It just works.</p>
+
+                <h3>Enums</h3>
+                <pre><code><span style="color:#c678dd;">enum</span> <span style="color:#e5c07b;">Status</span>: <span style="color:#e5c07b;">string</span>
+{
+    <span style="color:#c678dd;">case</span> <span style="color:#e06c75;">Pending</span> = <span style="color:#98c379;">'pending'</span>;
+    <span style="color:#c678dd;">case</span> <span style="color:#e06c75;">Active</span> = <span style="color:#98c379;">'active'</span>;
+    <span style="color:#c678dd;">case</span> <span style="color:#e06c75;">Archived</span> = <span style="color:#98c379;">'archived'</span>;
+}</code></pre>
+
+                <h3>Typed Closures</h3>
+                <pre><code><span style="color:#e06c75;">$users</span>
+    -><span style="color:#61afef;">filter</span>(<span style="color:#c678dd;">fn</span> (<span style="color:#e5c07b;">User</span> <span style="color:#e06c75;">$user</span>): <span style="color:#e5c07b;">bool</span> => <span style="color:#e06c75;">$user</span>-><span style="color:#e06c75;">isActive</span>())
+    -><span style="color:#61afef;">map</span>(<span style="color:#c678dd;">fn</span> (<span style="color:#e5c07b;">User</span> <span style="color:#e06c75;">$user</span>): <span style="color:#e5c07b;">string</span> => <span style="color:#e06c75;">$user</span>-><span style="color:#e06c75;">name</span>);</code></pre>
+
+                <h3>Match Expressions</h3>
+                <pre><code><span style="color:#e06c75;">$result</span> = <span style="color:#c678dd;">match</span> (<span style="color:#e06c75;">$status</span>) {
+    <span style="color:#e5c07b;">Status</span>::<span style="color:#e06c75;">Pending</span> => <span style="color:#98c379;">'Waiting for approval'</span>,
+    <span style="color:#e5c07b;">Status</span>::<span style="color:#e06c75;">Active</span> => <span style="color:#98c379;">'Ready to go'</span>,
+    <span style="color:#e5c07b;">Status</span>::<span style="color:#e06c75;">Archived</span> => <span style="color:#98c379;">'No longer available'</span>,
+};</code></pre>
+            </section>
+
+            <div class="break">• • •</div>
+
+            <p><strong>Still not convinced?</strong> Watch me explain it.</p>
+
+            <div class="video-embed">
+                <iframe src="https://www.youtube.com/embed/PLkLhIwVfMk" title="Why PHP?" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+            </div>
 
             <div class="break">• • •</div>
 
@@ -341,50 +561,104 @@ $users = $repository
 
                 <p>One command. Zero config. Production-ready.</p>
 
-                <div class="start-option">
-                    <strong>Laravel</strong>
-                    <p>Full-stack framework with batteries included. Auth, database, queues, and more.</p>
-                    <code>composer create-project laravel/laravel app</code>
+                <div class="os-selector">
+                    <button class="os-tab active" data-os="mac">macOS</button>
+                    <button class="os-tab" data-os="windows">Windows</button>
+                    <button class="os-tab" data-os="linux">Linux</button>
                 </div>
 
-                <div class="start-option">
-                    <strong>Symfony</strong>
-                    <p>High-performance framework for complex applications. Modular and flexible.</p>
-                    <code>symfony new my_project --webapp</code>
+                <div class="os-commands" id="os-mac">
+                    <div class="command-step">
+                        <span class="step-label">Install PHP</span>
+                        <div class="code-block">
+                            <button class="copy-btn" data-copy='/bin/bash -c "$(curl -fsSL https://php.new/install/mac)"'>copy</button>
+                            <pre><code>/bin/bash -c "$(curl -fsSL https://php.new/install/mac)"</code></pre>
+                        </div>
+                    </div>
+                    <div class="command-step">
+                        <span class="step-label">Create a Laravel app and run it</span>
+                        <div class="code-block">
+                            <button class="copy-btn" data-copy="laravel new my-app&#10;cd my-app&#10;composer run dev">copy</button>
+                            <pre><code>laravel new my-app
+cd my-app
+composer run dev <span style="color:#5c6370;"># visit http://localhost:8000</span></code></pre>
+                        </div>
+                    </div>
                 </div>
 
-                <div class="start-option">
-                    <strong>Slim</strong>
-                    <p>Micro-framework for APIs and microservices. Fast and minimalist.</p>
-                    <code>composer create-project slim/slim-skeleton app</code>
+                <div class="os-commands hidden" id="os-windows">
+                    <div class="command-step">
+                        <span class="step-label">Install PHP</span>
+                        <div class="code-block">
+                            <button class="copy-btn" data-copy="Set-ExecutionPolicy Bypass -Scope Process -Force; [System.Net.ServicePointManager]::SecurityProtocol = [System.Net.ServicePointManager]::SecurityProtocol -bor 3072; iex ((New-Object System.Net.WebClient).DownloadString('https://php.new/install/windows'))">copy</button>
+                            <pre><code>Set-ExecutionPolicy Bypass -Scope Process -Force; [System.Net.ServicePointManager]::SecurityProtocol = [System.Net.ServicePointManager]::SecurityProtocol -bor 3072; iex ((New-Object System.Net.WebClient).DownloadString('https://php.new/install/windows'))</code></pre>
+                        </div>
+                    </div>
+                    <div class="command-step">
+                        <span class="step-label">Create a Laravel app and run it</span>
+                        <div class="code-block">
+                            <button class="copy-btn" data-copy="laravel new my-app&#10;cd my-app&#10;composer run dev">copy</button>
+                            <pre><code>laravel new my-app
+cd my-app
+composer run dev <span style="color:#5c6370;"># visit http://localhost:8000</span></code></pre>
+                        </div>
+                    </div>
                 </div>
 
-                <div class="start-option">
-                    <strong>Vanilla PHP</strong>
-                    <p>Start from scratch. Full control, no dependencies.</p>
-                    <code>mkdir app && cd app && php -S localhost:8000</code>
+                <div class="os-commands hidden" id="os-linux">
+                    <div class="command-step">
+                        <span class="step-label">Install PHP</span>
+                        <div class="code-block">
+                            <button class="copy-btn" data-copy='/bin/bash -c "$(curl -fsSL https://php.new/install/linux)"'>copy</button>
+                            <pre><code>/bin/bash -c "$(curl -fsSL https://php.new/install/linux)"</code></pre>
+                        </div>
+                    </div>
+                    <div class="command-step">
+                        <span class="step-label">Create a Laravel app and run it</span>
+                        <div class="code-block">
+                            <button class="copy-btn" data-copy="laravel new my-app&#10;cd my-app&#10;composer run dev">copy</button>
+                            <pre><code>laravel new my-app
+cd my-app
+composer run dev <span style="color:#5c6370;"># visit http://localhost:8000</span></code></pre>
+                        </div>
+                    </div>
                 </div>
-
-                <p>Or try it instantly in your browser at <a href="https://php.new" target="_blank">php.new</a></p>
             </section>
 
-            <hr>
-
-            <p><strong>Join the renaissance.</strong> Write code that's type-safe, blazing fast, and beautiful. The future is being built with modern PHP—and you're already late.</p>
-
-            <p>
-                <a href="https://php.net" target="_blank">php.net</a> ·
-                <a href="https://laravel.com" target="_blank">laravel.com</a> ·
-                <a href="https://pestphp.com" target="_blank">pestphp.com</a>
-            </p>
-
             <footer>
-                <div class="footer-links">
-                    <span>Made by <a href="https://twitter.com/enunomaduro" target="_blank">Nuno Maduro</a></span>
-                    <a href="https://github.com/nunomaduro" target="_blank">GitHub</a>
-                    <a href="https://twitter.com/enunomaduro" target="_blank">Twitter</a>
+                <div class="footer-row">
+                    <span>Made by <a href="https://x.com/enunomaduro" target="_blank">Nuno Maduro</a></span>
+                    <div class="footer-links">
+                        <a href="https://php.net" target="_blank">php.net</a>
+                        <a href="https://thephp.foundation" target="_blank">PHP Foundation</a>
+                    </div>
                 </div>
             </footer>
         </div>
+
+        <script>
+            document.querySelectorAll('.os-tab').forEach(tab => {
+                tab.addEventListener('click', () => {
+                    document.querySelectorAll('.os-tab').forEach(t => t.classList.remove('active'));
+                    document.querySelectorAll('.os-commands').forEach(c => c.classList.add('hidden'));
+
+                    tab.classList.add('active');
+                    document.getElementById('os-' + tab.dataset.os).classList.remove('hidden');
+                });
+            });
+
+            document.querySelectorAll('.copy-btn').forEach(btn => {
+                btn.addEventListener('click', async () => {
+                    const text = btn.dataset.copy;
+                    await navigator.clipboard.writeText(text);
+                    btn.textContent = 'copied';
+                    btn.classList.add('copied');
+                    setTimeout(() => {
+                        btn.textContent = 'copy';
+                        btn.classList.remove('copied');
+                    }, 1000);
+                });
+            });
+        </script>
     </body>
 </html>
