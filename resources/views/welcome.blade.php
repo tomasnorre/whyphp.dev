@@ -244,14 +244,22 @@
                 <a href="#start">Start</a>
             </nav>
 
-            <h1>Why <span class="highlight">PHP</span> in 2025?</h1>
+            <h1>Why <span class="highlight">PHP</span> in 2026?</h1>
             <p class="subtitle">The language that powers 77% of the web has been completely reborn.</p>
 
             <p>Stop pretending PHP is still the language from 2004. It's not. Modern PHP has JIT compilation, fibers, enums, attributes, readonly properties, and a type system that rivals TypeScript.</p>
 
-            <p>No build steps. No transpilation. No bundling. No 900MB <code>node_modules</code>. Just write code and deploy. That's the superpower everyone forgot about.</p>
+            <p>No build steps. No transpilation. No bundling. No 900MB <code>node_modules</code>. Just write code and <a href="https://cloud.laravel.com" target="_blank">deploy</a>. That's the superpower everyone forgot about.</p>
 
-            <div class="break">• • •</div>
+            <pre><code><span style="color:#c678dd;">final</span> <span style="color:#c678dd;">readonly</span> <span style="color:#c678dd;">class</span> <span style="color:#e5c07b;">Book</span>
+{
+    <span style="color:#c678dd;">public function</span> <span style="color:#61afef;">__construct</span>(
+        <span style="color:#c678dd;">public</span> <span style="color:#e5c07b;">string</span> <span style="color:#e06c75;">$title</span>,
+        <span style="color:#c678dd;">public</span> <span style="color:#e5c07b;">string</span> <span style="color:#e06c75;">$description</span>,
+    ) {
+        <span style="color:#5c6370;">//</span>
+    }
+}</code></pre>
 
             <section id="evolution">
                 <h2>The Evolution</h2>
@@ -265,7 +273,7 @@
                 <p>Facebook, Wikipedia, WordPress, Slack, Etsy—billions of requests daily. When you need reliability at scale, PHP delivers. It's not theoretical. It's battle-tested for 30 years.</p>
 
                 <h3>Modern Language Features</h3>
-                <p>PHP 8.4 ships with everything you need:</p>
+                <p>PHP 8.5 ships with everything you need:</p>
 
                 <pre><code>&lt;?php
 
@@ -290,7 +298,7 @@ $users = $repository
             <section id="tools">
                 <h2>World-Class Tools</h2>
 
-                <p>The PHP ecosystem in 2025 rivals anything out there:</p>
+                <p>The PHP ecosystem in 2026 rivals anything out there:</p>
 
                 <div class="tools">
                     <div class="tool">
@@ -322,7 +330,7 @@ $users = $repository
                 <p>PHPStan at level max catches bugs before runtime. Pest ensures 100% type coverage. Rector upgrades your entire codebase automatically. This isn't your grandfather's PHP.</p>
 
                 <blockquote>
-                    PHP 8.4 with JIT is 3x faster than Python, Ruby, and often Node.js. Backed by the PHP Foundation and industry giants with annual releases like clockwork.
+                    PHP 8.5 with JIT is 3x faster than Python, Ruby, and often Node.js. Backed by the PHP Foundation and industry giants with annual releases like clockwork.
                 </blockquote>
             </section>
 
