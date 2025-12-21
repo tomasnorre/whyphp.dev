@@ -168,6 +168,8 @@
                 font-size: 1.25rem;
                 color: #71717a;
                 margin-bottom: 3rem;
+                opacity: 0;
+                animation: fadeInUp 0.8s ease forwards 0.15s;
             }
 
             h2 {
@@ -507,6 +509,257 @@
                     flex-wrap: wrap;
                 }
             }
+
+            /* ===== ANIMATIONS ===== */
+
+            /* Keyframes */
+            @keyframes fadeInUp {
+                from {
+                    opacity: 0;
+                    transform: translateY(30px);
+                }
+                to {
+                    opacity: 1;
+                    transform: translateY(0);
+                }
+            }
+
+            @keyframes blink {
+                0%, 50% { opacity: 1; }
+                51%, 100% { opacity: 0; }
+            }
+
+            @keyframes glow {
+                0%, 100% { box-shadow: 0 0 20px rgba(122, 134, 232, 0.1); }
+                50% { box-shadow: 0 0 30px rgba(122, 134, 232, 0.25); }
+            }
+
+            /* Hero entrance animations */
+            .hero-title {
+                animation: fadeInUp 0.8s ease forwards;
+            }
+
+            .hero-subtitle {
+                opacity: 0;
+                animation: fadeInUp 0.8s ease forwards 0.15s;
+            }
+
+            .hero-text-1 {
+                opacity: 0;
+                animation: fadeInUp 0.8s ease forwards 0.3s;
+            }
+
+            .hero-text-2 {
+                opacity: 0;
+                animation: fadeInUp 0.8s ease forwards 0.45s;
+            }
+
+            .hero-code {
+                opacity: 0;
+                animation: fadeInUp 0.8s ease forwards 0.6s;
+            }
+
+            .hero-share {
+                opacity: 0;
+                animation: fadeInUp 0.8s ease forwards 0.75s;
+            }
+
+            /* PHP highlight */
+            .highlight {
+                display: inline-block;
+            }
+
+            /* Scroll reveal */
+            .reveal {
+                opacity: 0;
+                transform: translateY(40px);
+                transition: opacity 0.7s cubic-bezier(0.4, 0, 0.2, 1),
+                            transform 0.7s cubic-bezier(0.4, 0, 0.2, 1);
+            }
+
+            .reveal.visible {
+                opacity: 1;
+                transform: translateY(0);
+            }
+
+            /* Staggered children for tools grid */
+            .stagger-children.visible .tool:nth-child(1) { transition-delay: 0.05s; }
+            .stagger-children.visible .tool:nth-child(2) { transition-delay: 0.1s; }
+            .stagger-children.visible .tool:nth-child(3) { transition-delay: 0.15s; }
+            .stagger-children.visible .tool:nth-child(4) { transition-delay: 0.2s; }
+            .stagger-children.visible .tool:nth-child(5) { transition-delay: 0.25s; }
+            .stagger-children.visible .tool:nth-child(6) { transition-delay: 0.3s; }
+
+            .stagger-children .tool {
+                opacity: 0;
+                transform: translateY(20px);
+                transition: opacity 0.5s ease, transform 0.5s ease,
+                            border-color 0.3s ease, background 0.3s ease, box-shadow 0.3s ease;
+            }
+
+            .stagger-children.visible .tool {
+                opacity: 1;
+                transform: translateY(0);
+            }
+
+            /* Enhanced tool hover with depth */
+            .tool {
+                position: relative;
+                overflow: hidden;
+            }
+
+            .tool::before {
+                content: '';
+                position: absolute;
+                top: 0;
+                left: -100%;
+                width: 100%;
+                height: 100%;
+                background: linear-gradient(90deg, transparent, rgba(122, 134, 232, 0.1), transparent);
+                transition: left 0.5s ease;
+            }
+
+            .tool:hover::before {
+                left: 100%;
+            }
+
+            .tool:hover {
+                transform: translateY(-4px) scale(1.02);
+                border-color: #7A86E8;
+                background: #1f1f23;
+                box-shadow: 0 12px 40px rgba(122, 134, 232, 0.2);
+            }
+
+            /* Share button enhanced hover */
+            .share-btn {
+                position: relative;
+                overflow: hidden;
+                transform: translateY(0);
+                transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            }
+
+            .share-btn:hover {
+                transform: translateY(-3px);
+                box-shadow: 0 8px 25px rgba(122, 134, 232, 0.25);
+            }
+
+            .share-btn:active {
+                transform: translateY(-1px);
+            }
+
+            /* OS tab animations */
+            .os-tab {
+                transform: scale(1);
+                transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+            }
+
+            .os-tab:hover:not(.active) {
+                transform: scale(1.05);
+                border-color: #52525b;
+            }
+
+            .os-tab.active {
+                box-shadow: 0 4px 20px rgba(122, 134, 232, 0.4);
+            }
+
+            /* Code block enhancements */
+            pre {
+                position: relative;
+                transition: box-shadow 0.3s ease, transform 0.3s ease;
+            }
+
+            pre:hover {
+                box-shadow: 0 8px 30px rgba(0, 0, 0, 0.4);
+                transform: translateY(-2px);
+            }
+
+            /* Typing effect container */
+            .code-typed pre {
+                height: 380px;
+                overflow: hidden;
+            }
+
+            .typing-cursor {
+                display: inline-block;
+                width: 2px;
+                height: 1.1em;
+                background: #7A86E8;
+                margin-left: 2px;
+                animation: blink 0.8s infinite;
+                vertical-align: text-bottom;
+            }
+
+            /* Nav link underline animation */
+            .nav a {
+                position: relative;
+            }
+
+            .nav a::after {
+                content: '';
+                position: absolute;
+                bottom: -4px;
+                left: 0;
+                width: 0;
+                height: 2px;
+                background: #7A86E8;
+                transition: width 0.3s ease;
+            }
+
+            .nav a:hover::after {
+                width: 100%;
+            }
+
+            /* Video embed hover */
+            .video-embed {
+                transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1),
+                            box-shadow 0.4s ease;
+            }
+
+            .video-embed:hover {
+                transform: scale(1.02);
+                box-shadow: 0 25px 60px rgba(122, 134, 232, 0.2);
+            }
+
+            /* Copy button pulse on hover */
+            .copy-btn {
+                transition: all 0.2s ease;
+            }
+
+            .copy-btn:hover {
+                transform: scale(1.05);
+                box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+            }
+
+            /* Section dividers fade in */
+            hr {
+                opacity: 0;
+                transition: opacity 0.6s ease;
+            }
+
+            hr.visible {
+                opacity: 1;
+            }
+
+            /* Footer reveal */
+            footer {
+                opacity: 0;
+                transform: translateY(20px);
+                transition: opacity 0.6s ease, transform 0.6s ease;
+            }
+
+            footer.visible {
+                opacity: 1;
+                transform: translateY(0);
+            }
+
+            /* Reduce motion for accessibility */
+            @media (prefers-reduced-motion: reduce) {
+                *, *::before, *::after {
+                    animation-duration: 0.01ms !important;
+                    animation-iteration-count: 1 !important;
+                    transition-duration: 0.01ms !important;
+                }
+            }
         </style>
     </head>
     <body>
@@ -521,30 +774,19 @@
                 <a href="#start">Start today</a>
             </nav>
 
-            <h1>Why <span class="highlight">PHP</span> in 2026?</h1>
-            <p class="subtitle">The language that powers 77% of the web is actually good now.</p>
+            <h1 class="hero-title">Why <span class="highlight">PHP</span> in 2026?</h1>
 
-            <p>Stop pretending PHP is still the language from 2004. It's not. Modern PHP has JIT compilation, immutability by default via <code>readonly</code>, enums, attributes, and a type system that rivals TypeScript.</p>
+            <p class="subtitle">It powers 77% of the web. And it's actually good now.</p>
 
-            <p>No build steps. No transpilation. No bundling. No 900MB <code>node_modules</code>. Just write code and <a href="https://cloud.laravel.com" target="_blank">deploy</a>. That's the superpower everyone forgot about.</p>
+            <p class="hero-text-1">Stop pretending PHP is still the language from 2004. It's not. Modern PHP has JIT compilation, immutability via <code>readonly</code>, enums, attributes, and a type system that rivals TypeScript.</p>
 
-            <pre><code><span style="color:#c678dd;">final</span> <span style="color:#c678dd;">readonly</span> <span style="color:#c678dd;">class</span> <span style="color:#e5c07b;">Book</span>
-{
-    <span style="color:#c678dd;">public function</span> <span style="color:#61afef;">__construct</span>(
-        <span style="color:#c678dd;">public</span> <span style="color:#e5c07b;">Status</span> <span style="color:#e06c75;">$status</span>,
-        <span style="color:#c678dd;">public</span> <span style="color:#e5c07b;">string</span> <span style="color:#e06c75;">$title</span>,
-    ) {}
+            <p class="hero-text-2">No build steps. No transpilation. No bundling. No 900MB <code>node_modules</code>. Just write code and <a href="https://cloud.laravel.com" target="_blank">deploy</a>. That's the superpower everyone forgot about.</p>
 
-    <span style="color:#c678dd;">public function</span> <span style="color:#61afef;">label</span>(): <span style="color:#e5c07b;">string</span>
-    {
-        <span style="color:#c678dd;">return</span> <span style="color:#c678dd;">match</span> (<span style="color:#e06c75;">$this</span>-><span style="color:#e06c75;">status</span>) {
-            <span style="color:#e5c07b;">Status</span>::<span style="color:#e06c75;">Draft</span> => <span style="color:#98c379;">'Working on it'</span>,
-            <span style="color:#e5c07b;">Status</span>::<span style="color:#e06c75;">Published</span> => <span style="color:#98c379;">'Ready to read'</span>,
-        };
-    }
-}</code></pre>
+            <div class="hero-code code-typed" id="hero-code-block">
+            <pre><code id="typed-code"></code></pre>
+            </div>
 
-            <div class="share-section">
+            <div class="share-section hero-share">
                 <span class="share-label">Spread the word:</span>
                 <a href="#" class="share-btn" id="share-twitter" target="_blank" rel="noopener">
                     <svg viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
@@ -562,12 +804,12 @@
 
             <hr>
 
-            <section id="ecosystem">
+            <section id="ecosystem" class="reveal">
                 <h2>Ecosystem</h2>
 
                 <p>Modern PHP isn't just better. It's unrecognizable from its past.</p>
 
-                <div class="tools">
+                <div class="tools stagger-children">
                     <a href="https://laravel.com" target="_blank" class="tool">
                         <strong>Laravel</strong>
                         <span>Rails/Next.js for PHP</span>
@@ -599,7 +841,7 @@
 
             <hr>
 
-            <section id="watch-this">
+            <section id="watch-this" class="reveal">
                 <h2>Still think PHP is a joke?</h2>
 
                 <p>So did we. Then we actually looked at it. Type-safe. Expressive. Modern. It just works. <strong>Watch me explain it.</strong></p>
@@ -626,19 +868,19 @@
 
                 <hr>
 
-                <h2 id="examples">Code That Ships</h2>
-                <p>This is what PHP looks like in production.</p>
+                <h2 id="examples" class="reveal">Code That Ships</h2>
+                <p class="reveal">This is what PHP looks like in production.</p>
 
-                <h3>API with Laravel</h3>
-                <pre><code><span style="color:#e5c07b;">Route</span>::<span style="color:#61afef;">get</span>(<span style="color:#98c379;">'/books'</span>, <span style="color:#c678dd;">function</span> () {
+                <h3 class="reveal">API with Laravel</h3>
+                <pre class="reveal"><code><span style="color:#e5c07b;">Route</span>::<span style="color:#61afef;">get</span>(<span style="color:#98c379;">'/books'</span>, <span style="color:#c678dd;">function</span> () {
     <span style="color:#c678dd;">return</span> <span style="color:#e5c07b;">Book</span>::<span style="color:#61afef;">query</span>()
         -><span style="color:#61afef;">where</span>(<span style="color:#98c379;">'status'</span>, <span style="color:#e5c07b;">Status</span>::<span style="color:#e06c75;">Published</span>)
         -><span style="color:#61afef;">with</span>(<span style="color:#98c379;">'author'</span>)
         -><span style="color:#61afef;">paginate</span>();
 });</code></pre>
 
-                <h3>Testing with Pest</h3>
-                <pre><code><span style="color:#61afef;">it</span>(<span style="color:#98c379;">'publishes a book'</span>, <span style="color:#c678dd;">function</span> () {
+                <h3 class="reveal">Testing with Pest</h3>
+                <pre class="reveal"><code><span style="color:#61afef;">it</span>(<span style="color:#98c379;">'publishes a book'</span>, <span style="color:#c678dd;">function</span> () {
     <span style="color:#e06c75;">$book</span> = <span style="color:#e5c07b;">Book</span>::<span style="color:#61afef;">factory</span>()-><span style="color:#61afef;">create</span>();
 
     <span style="color:#e06c75;">$book</span>-><span style="color:#61afef;">publish</span>();
@@ -646,8 +888,8 @@
     <span style="color:#61afef;">expect</span>(<span style="color:#e06c75;">$book</span>-><span style="color:#e06c75;">status</span>)-><span style="color:#61afef;">toBe</span>(<span style="color:#e5c07b;">Status</span>::<span style="color:#e06c75;">Published</span>);
 });</code></pre>
 
-                <h3>Generics with PHPStan</h3>
-                <pre><code><span style="color:#5c6370;">/** </span><span style="color:#c678dd;">@return</span><span style="color:#5c6370;"> </span><span style="color:#e5c07b;">array</span><span style="color:#5c6370;">&lt;</span><span style="color:#e5c07b;">int</span><span style="color:#5c6370;">, </span><span style="color:#e5c07b;">string</span><span style="color:#5c6370;">&gt; */</span>
+                <h3 class="reveal">Generics with PHPStan</h3>
+                <pre class="reveal"><code><span style="color:#5c6370;">/** </span><span style="color:#c678dd;">@return</span><span style="color:#5c6370;"> </span><span style="color:#e5c07b;">array</span><span style="color:#5c6370;">&lt;</span><span style="color:#e5c07b;">int</span><span style="color:#5c6370;">, </span><span style="color:#e5c07b;">string</span><span style="color:#5c6370;">&gt; */</span>
 <span style="color:#c678dd;">public function</span> <span style="color:#61afef;">names</span>(): <span style="color:#e5c07b;">array</span>
 {
     <span style="color:#c678dd;">return</span> <span style="color:#e5c07b;">User</span>::<span style="color:#61afef;">all</span>()
@@ -659,7 +901,7 @@
 
             <hr>
 
-            <section id="start">
+            <section id="start" class="reveal">
                 <h2>Start Today</h2>
 
                 <p>One command. Zero config. Production-ready.</p>
@@ -740,6 +982,78 @@ composer run dev <span style="color:#5c6370;"># visit http://localhost:8000</spa
         </div>
 
         <script>
+            // ===== SCROLL REVEAL =====
+            const revealObserver = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                    }
+                });
+            }, {
+                threshold: 0.1,
+                rootMargin: '0px 0px -50px 0px'
+            });
+
+            document.querySelectorAll('.reveal, .stagger-children, hr, footer').forEach(el => {
+                revealObserver.observe(el);
+            });
+
+            // ===== TYPING EFFECT =====
+            const codeToType = `final readonly class Book
+{
+    public function __construct(
+        public Status $status,
+        public string $title,
+    ) {}
+
+    public function label(): string
+    {
+        return match ($this->status) {
+            Status::Draft => 'Working on it',
+            Status::Published => 'Ready to read',
+        };
+    }
+}`;
+
+            const syntaxHighlight = (code) => {
+                return code
+                    .replace(/\b(final|readonly|class|public|function|return|match)\b/g, '<span style="color:#c678dd;">$1</span>')
+                    .replace(/\b(Status|Book|string)\b/g, '<span style="color:#e5c07b;">$1</span>')
+                    .replace(/(__construct|label)/g, '<span style="color:#61afef;">$1</span>')
+                    .replace(/(\$\w+)/g, '<span style="color:#e06c75;">$1</span>')
+                    .replace(/(Status)::(Draft|Published)/g, '<span style="color:#e5c07b;">$1</span>::<span style="color:#e06c75;">$2</span>')
+                    .replace(/'([^']+)'/g, '<span style="color:#98c379;">\'$1\'</span>');
+            };
+
+            const typedCodeEl = document.getElementById('typed-code');
+            let charIndex = 0;
+            let typingStarted = false;
+
+            const typeCode = () => {
+                if (charIndex < codeToType.length) {
+                    const currentText = codeToType.substring(0, charIndex + 1);
+                    typedCodeEl.innerHTML = syntaxHighlight(currentText) + '<span class="typing-cursor"></span>';
+                    charIndex++;
+                    const delay = codeToType[charIndex - 1] === '\n' ? 25 : Math.random() * 8 + 4;
+                    setTimeout(typeCode, delay);
+                } else {
+                    typedCodeEl.innerHTML = syntaxHighlight(codeToType);
+                }
+            };
+
+            // Start typing when hero code block is visible
+            const heroCodeObserver = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting && !typingStarted) {
+                        typingStarted = true;
+                        setTimeout(typeCode, 300);
+                    }
+                });
+            }, { threshold: 0.5 });
+
+            heroCodeObserver.observe(document.getElementById('hero-code-block'));
+
+            // ===== OS TABS =====
             document.querySelectorAll('.os-tab').forEach(tab => {
                 tab.addEventListener('click', () => {
                     document.querySelectorAll('.os-tab').forEach(t => t.classList.remove('active'));
