@@ -5,10 +5,10 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
         <!-- Primary Meta Tags -->
-        <title>Why PHP in 2026? Modern PHP is Type-Safe, Fast & Beautiful | whyphp.dev</title>
-        <meta name="title" content="Why PHP in 2026? Modern PHP is Type-Safe, Fast & Beautiful">
-        <meta name="description" content="PHP powers 77% of the web and has been completely reborn. Modern PHP features JIT compilation, enums, readonly properties, fibers, and TypeScript-level type safety. Learn why developers are choosing PHP in 2026.">
-        <meta name="keywords" content="PHP, modern PHP, PHP 8, PHP 8.5, Laravel, Symfony, web development, programming language, type-safe PHP, PHP tutorial, learn PHP, PHP framework, Composer, PHPStan, Pest">
+        <title>Why PHP in 2026? The Language That Powers 77% of the Web is Actually Good Now</title>
+        <meta name="title" content="Why PHP in 2026? The Language That Powers 77% of the Web is Actually Good Now">
+        <meta name="description" content="PHP powers 77% of the web and is actually good now. TypeScript-level types, no build steps, immutability via readonly, enums, and more. No node_modules. Just write code and deploy.">
+        <meta name="keywords" content="PHP, modern PHP, PHP 8, PHP 8.5, Laravel, Symfony, web development, programming language, type-safe PHP, PHP tutorial, learn PHP, PHP framework, Composer, PHPStan, Pest, readonly, enums">
         <meta name="author" content="Nuno Maduro">
         <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
         <meta name="googlebot" content="index, follow">
@@ -22,12 +22,12 @@
         <meta property="og:type" content="website">
         <meta property="og:url" content="https://whyphp.dev">
         <meta property="og:site_name" content="Why PHP">
-        <meta property="og:title" content="Why PHP in 2026? Modern PHP is Type-Safe, Fast & Beautiful">
-        <meta property="og:description" content="PHP powers 77% of the web and has been completely reborn. Modern PHP features JIT compilation, enums, readonly properties, and TypeScript-level type safety.">
+        <meta property="og:title" content="Why PHP in 2026? The Language That Powers 77% of the Web is Actually Good Now">
+        <meta property="og:description" content="PHP powers 77% of the web and is actually good now. TypeScript-level types, no build steps, immutability via readonly, enums, and more. Just write code and deploy.">
         <meta property="og:image" content="https://whyphp.dev/og-image.png">
         <meta property="og:image:width" content="1200">
         <meta property="og:image:height" content="630">
-        <meta property="og:image:alt" content="Why PHP in 2026? - Modern PHP is Type-Safe, Fast & Beautiful">
+        <meta property="og:image:alt" content="Why PHP in 2026? - PHP is actually good now">
         <meta property="og:locale" content="en_US">
 
         <!-- Twitter -->
@@ -35,10 +35,10 @@
         <meta name="twitter:site" content="@@enunomaduro">
         <meta name="twitter:creator" content="@@enunomaduro">
         <meta name="twitter:url" content="https://whyphp.dev">
-        <meta name="twitter:title" content="Why PHP in 2026? Modern PHP is Type-Safe, Fast & Beautiful">
-        <meta name="twitter:description" content="PHP powers 77% of the web and has been completely reborn. Modern PHP features JIT compilation, enums, readonly properties, and TypeScript-level type safety.">
+        <meta name="twitter:title" content="Why PHP in 2026? The Language That Powers 77% of the Web is Actually Good Now">
+        <meta name="twitter:description" content="PHP powers 77% of the web and is actually good now. TypeScript-level types, no build steps, immutability via readonly, enums, and more. Just write code and deploy.">
         <meta name="twitter:image" content="https://whyphp.dev/og-image.png">
-        <meta name="twitter:image:alt" content="Why PHP in 2026? - Modern PHP is Type-Safe, Fast & Beautiful">
+        <meta name="twitter:image:alt" content="Why PHP in 2026? - PHP is actually good now">
 
         <!-- Structured Data / JSON-LD -->
         <script type="application/ld+json">
@@ -48,7 +48,7 @@
             "name": "Why PHP",
             "alternateName": ["whyphp.dev", "Why PHP in 2026"],
             "url": "https://whyphp.dev",
-            "description": "PHP powers 77% of the web and has been completely reborn. Modern PHP features JIT compilation, enums, readonly properties, and TypeScript-level type safety.",
+            "description": "PHP powers 77% of the web and is actually good now. TypeScript-level types, no build steps, immutability via readonly, enums, and more.",
             "author": {
                 "@@type": "Person",
                 "name": "Nuno Maduro",
@@ -59,7 +59,7 @@
                 "name": "PHP",
                 "url": "https://php.net"
             },
-            "keywords": "PHP, modern PHP, PHP 8, Laravel, Symfony, web development, programming"
+            "keywords": "PHP, modern PHP, PHP 8, Laravel, Symfony, web development, readonly, enums, type safety"
         }
         </script>
         <script type="application/ld+json">
@@ -72,7 +72,7 @@
                     "name": "Why should I use PHP in 2026?",
                     "acceptedAnswer": {
                         "@@type": "Answer",
-                        "text": "Modern PHP has been completely reborn with JIT compilation, fibers, enums, attributes, readonly properties, and a type system that rivals TypeScript. It powers 77% of the web including WordPress, Laravel, and Symfony."
+                        "text": "PHP powers 77% of the web and is actually good now. TypeScript-level types, no build steps, immutability via readonly, enums, and a type system that rivals TypeScript. No node_modules. Just write code and deploy."
                     }
                 },
                 {
@@ -80,7 +80,7 @@
                     "name": "Is PHP still relevant?",
                     "acceptedAnswer": {
                         "@@type": "Answer",
-                        "text": "Absolutely. PHP powers 77% of the web. Modern PHP features TypeScript-level type safety, Jest-level testing with Pest, and Rust-level tooling. Major platforms like WordPress, Facebook, and Wikipedia run on PHP."
+                        "text": "Absolutely. PHP powers 77% of the web and is actually good now. TypeScript-level type safety, Jest-level testing with Pest, no build steps, and no node_modules. Major platforms like WordPress, Facebook, and Wikipedia run on PHP."
                     }
                 },
                 {
@@ -522,7 +522,7 @@
             </nav>
 
             <h1>Why <span class="highlight">PHP</span> in 2026?</h1>
-            <p class="subtitle">The language that powers 77% of the web has been completely reborn.</p>
+            <p class="subtitle">The language that powers 77% of the web is actually good now.</p>
 
             <p>Stop pretending PHP is still the language from 2004. It's not. Modern PHP has JIT compilation, immutability by default via <code>readonly</code>, enums, attributes, and a type system that rivals TypeScript.</p>
 
@@ -765,9 +765,7 @@ composer run dev <span style="color:#5c6370;"># visit http://localhost:8000</spa
 
             // Share functionality
             const shareUrl = 'https://whyphp.dev';
-            const shareText = `Why PHP in 2026? JIT compilation, immutability by default via readonly, enums, attributes, and a type system that rivals TypeScript.
-
-Check this out:`;
+            const shareText = 'Why PHP in 2026? TypeScript-level types, no build steps, immutability by default via readonly, enums, and more.';
 
             document.getElementById('share-twitter').href =
                 `https://twitter.com/intent/tweet?text=${encodeURIComponent(shareText)}&url=${encodeURIComponent(shareUrl)}`;
@@ -788,7 +786,7 @@ Check this out:`;
 
             // Video share functionality
             const videoUrl = 'https://www.youtube.com/watch?v=PLkLhIwVfMk';
-            const videoShareText = 'Why PHP in 2026? Watch this...';
+            const videoShareText = 'Why PHP in 2026? Watch this:';
 
             document.getElementById('share-video-twitter').href =
                 `https://twitter.com/intent/tweet?text=${encodeURIComponent(videoShareText)}&url=${encodeURIComponent(videoUrl)}`;
