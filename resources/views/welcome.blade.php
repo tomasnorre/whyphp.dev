@@ -161,7 +161,18 @@
             }
 
             h1 .highlight {
-                color: #7A86E8;
+                background: linear-gradient(135deg, #4F8FE8 0%, #60A5FA 35%, #38BDF8 65%, #4F8FE8 100%);
+                background-size: 200% 200%;
+                -webkit-background-clip: text;
+                -webkit-text-fill-color: transparent;
+                background-clip: text;
+                animation: gradientShift 3s ease infinite;
+                filter: drop-shadow(0 0 30px rgba(79, 143, 232, 0.6));
+            }
+
+            @keyframes gradientShift {
+                0%, 100% { background-position: 0% 50%; }
+                50% { background-position: 100% 50%; }
             }
 
             .subtitle {
