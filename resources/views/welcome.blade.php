@@ -202,8 +202,18 @@
 
             hr {
                 border: none;
-                border-top: 1px solid #27272a;
+                height: 1.5rem;
                 margin: 4rem 0;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+
+            hr::before {
+                content: '•   •   •';
+                color: #3f3f46;
+                font-size: 1rem;
+                letter-spacing: 0.25rem;
             }
 
             blockquote {
@@ -236,14 +246,6 @@
             pre code {
                 background: none;
                 padding: 0;
-            }
-
-            .break {
-                text-align: center;
-                font-size: 1.5rem;
-                margin: 3rem 0;
-                color: #3f3f46;
-                letter-spacing: 0.5rem;
             }
 
             strong {
@@ -461,30 +463,42 @@
     <body>
         <div class="container">
             <nav class="nav">
-                <a href="#evolution">The Evolution</a>
+                <a href="#ecosystem">Ecosystem</a>
                 <span class="nav-sep">·</span>
-                <a href="#start">Start</a>
+                <a href="#watch-this">Watch this</a>
+                <span class="nav-sep">·</span>
+                <a href="#examples">Real examples</a>
+                <span class="nav-sep">·</span>
+                <a href="#start">Start today</a>
             </nav>
 
             <h1>Why <span class="highlight">PHP</span> in 2026?</h1>
             <p class="subtitle">The language that powers 77% of the web has been completely reborn.</p>
 
-            <p>Stop pretending PHP is still the language from 2004. It's not. Modern PHP has JIT compilation, fibers, enums, attributes, readonly properties, and a type system that rivals TypeScript.</p>
+            <p>Stop pretending PHP is still the language from 2004. It's not. Modern PHP has JIT compilation, immutability by default via <code>readonly</code>, enums, attributes, and a type system that rivals TypeScript.</p>
 
             <p>No build steps. No transpilation. No bundling. No 900MB <code>node_modules</code>. Just write code and <a href="https://cloud.laravel.com" target="_blank">deploy</a>. That's the superpower everyone forgot about.</p>
 
             <pre><code><span style="color:#c678dd;">final</span> <span style="color:#c678dd;">readonly</span> <span style="color:#c678dd;">class</span> <span style="color:#e5c07b;">Book</span>
 {
     <span style="color:#c678dd;">public function</span> <span style="color:#61afef;">__construct</span>(
+        <span style="color:#c678dd;">public</span> <span style="color:#e5c07b;">Status</span> <span style="color:#e06c75;">$status</span>,
         <span style="color:#c678dd;">public</span> <span style="color:#e5c07b;">string</span> <span style="color:#e06c75;">$title</span>,
-        <span style="color:#c678dd;">public</span> <span style="color:#e5c07b;">string</span> <span style="color:#e06c75;">$description</span>,
-    ) {
-        <span style="color:#5c6370;">//</span>
+    ) {}
+
+    <span style="color:#c678dd;">public function</span> <span style="color:#61afef;">label</span>(): <span style="color:#e5c07b;">string</span>
+    {
+        <span style="color:#c678dd;">return</span> <span style="color:#c678dd;">match</span> (<span style="color:#e06c75;">$this</span>-><span style="color:#e06c75;">status</span>) {
+            <span style="color:#e5c07b;">Status</span>::<span style="color:#e06c75;">Draft</span> => <span style="color:#98c379;">'Working on it'</span>,
+            <span style="color:#e5c07b;">Status</span>::<span style="color:#e06c75;">Published</span> => <span style="color:#98c379;">'Ready to read'</span>,
+        };
     }
 }</code></pre>
 
-            <section id="evolution">
-                <h2>The Evolution</h2>
+            <hr>
+
+            <section id="ecosystem">
+                <h2>Ecosystem</h2>
 
                 <p>Modern PHP isn't just better. It's unrecognizable from its past.</p>
 
@@ -518,43 +532,51 @@
                 <p>The PHP ecosystem in 2026 rivals anything out there. TypeScript-level type safety. Jest-level testing. Rust-level tooling. This isn't your grandfather's PHP.</p>
             </section>
 
-            <div class="break">• • •</div>
+            <hr>
 
-            <section id="modern">
+            <section id="watch-this">
                 <h2>Still think PHP is a joke?</h2>
 
-                <p>So did we. Then we actually looked at it. Type-safe. Expressive. Modern. It just works.</p>
+                <p>So did we. Then we actually looked at it. Type-safe. Expressive. Modern. It just works. <strong>Watch me explain it.</strong></p>
 
-                <h3>Enums</h3>
-                <pre><code><span style="color:#c678dd;">enum</span> <span style="color:#e5c07b;">Status</span>: <span style="color:#e5c07b;">string</span>
+                <div class="video-embed">
+                    <iframe src="https://www.youtube.com/embed/PLkLhIwVfMk" title="Why PHP?" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                </div>
+
+                <hr>
+
+                <h2 id="examples">Code That Ships</h2>
+                <p>This is what PHP looks like in production.</p>
+
+                <h3>API with Laravel</h3>
+                <pre><code><span style="color:#e5c07b;">Route</span>::<span style="color:#61afef;">get</span>(<span style="color:#98c379;">'/books'</span>, <span style="color:#c678dd;">function</span> () {
+    <span style="color:#c678dd;">return</span> <span style="color:#e5c07b;">Book</span>::<span style="color:#61afef;">query</span>()
+        -><span style="color:#61afef;">where</span>(<span style="color:#98c379;">'status'</span>, <span style="color:#e5c07b;">Status</span>::<span style="color:#e06c75;">Published</span>)
+        -><span style="color:#61afef;">with</span>(<span style="color:#98c379;">'author'</span>)
+        -><span style="color:#61afef;">paginate</span>();
+});</code></pre>
+
+                <h3>Testing with Pest</h3>
+                <pre><code><span style="color:#61afef;">it</span>(<span style="color:#98c379;">'publishes a book'</span>, <span style="color:#c678dd;">function</span> () {
+    <span style="color:#e06c75;">$book</span> = <span style="color:#e5c07b;">Book</span>::<span style="color:#61afef;">factory</span>()-><span style="color:#61afef;">create</span>();
+
+    <span style="color:#e06c75;">$book</span>-><span style="color:#61afef;">publish</span>();
+
+    <span style="color:#61afef;">expect</span>(<span style="color:#e06c75;">$book</span>-><span style="color:#e06c75;">status</span>)-><span style="color:#61afef;">toBe</span>(<span style="color:#e5c07b;">Status</span>::<span style="color:#e06c75;">Published</span>);
+});</code></pre>
+
+                <h3>Generics with PHPStan</h3>
+                <pre><code><span style="color:#5c6370;">/** </span><span style="color:#c678dd;">@return</span><span style="color:#5c6370;"> </span><span style="color:#e5c07b;">array</span><span style="color:#5c6370;">&lt;</span><span style="color:#e5c07b;">int</span><span style="color:#5c6370;">, </span><span style="color:#e5c07b;">string</span><span style="color:#5c6370;">&gt; */</span>
+<span style="color:#c678dd;">public function</span> <span style="color:#61afef;">names</span>(): <span style="color:#e5c07b;">array</span>
 {
-    <span style="color:#c678dd;">case</span> <span style="color:#e06c75;">Pending</span> = <span style="color:#98c379;">'pending'</span>;
-    <span style="color:#c678dd;">case</span> <span style="color:#e06c75;">Active</span> = <span style="color:#98c379;">'active'</span>;
-    <span style="color:#c678dd;">case</span> <span style="color:#e06c75;">Archived</span> = <span style="color:#98c379;">'archived'</span>;
+    <span style="color:#c678dd;">return</span> <span style="color:#e5c07b;">User</span>::<span style="color:#61afef;">all</span>()
+        -><span style="color:#61afef;">filter</span>(<span style="color:#c678dd;">fn</span> (<span style="color:#e5c07b;">User</span> <span style="color:#e06c75;">$user</span>): <span style="color:#e5c07b;">bool</span> => <span style="color:#e06c75;">$user</span>-><span style="color:#61afef;">isActive</span>())
+        -><span style="color:#61afef;">map</span>(<span style="color:#c678dd;">fn</span> (<span style="color:#e5c07b;">User</span> <span style="color:#e06c75;">$user</span>): <span style="color:#e5c07b;">string</span> => <span style="color:#e06c75;">$user</span>-><span style="color:#e06c75;">name</span>)
+        -><span style="color:#61afef;">toArray</span>();
 }</code></pre>
-
-                <h3>Typed Closures</h3>
-                <pre><code><span style="color:#e06c75;">$users</span>
-    -><span style="color:#61afef;">filter</span>(<span style="color:#c678dd;">fn</span> (<span style="color:#e5c07b;">User</span> <span style="color:#e06c75;">$user</span>): <span style="color:#e5c07b;">bool</span> => <span style="color:#e06c75;">$user</span>-><span style="color:#e06c75;">isActive</span>())
-    -><span style="color:#61afef;">map</span>(<span style="color:#c678dd;">fn</span> (<span style="color:#e5c07b;">User</span> <span style="color:#e06c75;">$user</span>): <span style="color:#e5c07b;">string</span> => <span style="color:#e06c75;">$user</span>-><span style="color:#e06c75;">name</span>);</code></pre>
-
-                <h3>Match Expressions</h3>
-                <pre><code><span style="color:#e06c75;">$result</span> = <span style="color:#c678dd;">match</span> (<span style="color:#e06c75;">$status</span>) {
-    <span style="color:#e5c07b;">Status</span>::<span style="color:#e06c75;">Pending</span> => <span style="color:#98c379;">'Waiting for approval'</span>,
-    <span style="color:#e5c07b;">Status</span>::<span style="color:#e06c75;">Active</span> => <span style="color:#98c379;">'Ready to go'</span>,
-    <span style="color:#e5c07b;">Status</span>::<span style="color:#e06c75;">Archived</span> => <span style="color:#98c379;">'No longer available'</span>,
-};</code></pre>
             </section>
 
-            <div class="break">• • •</div>
-
-            <p><strong>Still not convinced?</strong> Watch me explain it.</p>
-
-            <div class="video-embed">
-                <iframe src="https://www.youtube.com/embed/PLkLhIwVfMk" title="Why PHP?" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-            </div>
-
-            <div class="break">• • •</div>
+            <hr>
 
             <section id="start">
                 <h2>Start Today</h2>
