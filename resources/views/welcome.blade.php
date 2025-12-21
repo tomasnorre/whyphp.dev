@@ -763,6 +763,59 @@
                 transform: translateY(0);
             }
 
+            /* Badge section */
+            .badge-showcase {
+                display: flex;
+                justify-content: center;
+                margin: 2rem 0;
+            }
+
+            .badge-preview {
+                display: inline-block;
+                padding: 1.5rem 2rem;
+                background: #0d0d0f;
+                border: 1px dashed #3f3f46;
+                border-radius: 8px;
+                transition: all 0.3s ease;
+            }
+
+            .badge-preview:hover {
+                border-color: #7A86E8;
+                background: #18181b;
+                transform: scale(1.05);
+            }
+
+            .badge-preview svg {
+                display: block;
+            }
+
+            .badge-code {
+                margin: 1.5rem 0;
+            }
+
+            .badge-code pre {
+                font-size: 0.8rem;
+                word-break: break-all;
+                white-space: pre-wrap;
+            }
+
+            .badge-preview-result {
+                margin: 1.5rem 0;
+            }
+
+            .badge-preview-result a {
+                display: inline-block;
+                transition: transform 0.2s ease;
+            }
+
+            .badge-preview-result a:hover {
+                transform: scale(1.1);
+            }
+
+            .badge-preview-result img {
+                display: block;
+            }
+
             /* Reduce motion for accessibility */
             @media (prefers-reduced-motion: reduce) {
                 *, *::before, *::after {
@@ -783,6 +836,8 @@
                 <a href="#examples">Real examples</a>
                 <span class="nav-sep">·</span>
                 <a href="#start">Start today</a>
+                <span class="nav-sep">·</span>
+                <a href="#badge">Badge</a>
             </nav>
 
             <h1 class="hero-title">Why <span class="highlight">PHP</span> in 2026?</h1>
@@ -978,6 +1033,41 @@ cd my-app
 composer run dev <span style="color:#5c6370;"># visit http://localhost:8000</span></code></pre>
                         </div>
                     </div>
+                </div>
+            </section>
+
+            <hr>
+
+            <section id="badge" class="reveal">
+                <h2>Show Your Support</h2>
+
+                <p>Add this badge to your README. Let the mass know.</p>
+
+                <div class="badge-showcase">
+                    <a href="https://whyphp.dev" target="_blank" class="badge-preview">
+                        <svg width="120" height="28" viewBox="0 0 120 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <rect width="120" height="28" rx="6" fill="#18181b"/>
+                            <rect x="0.5" y="0.5" width="119" height="27" rx="5.5" stroke="#27272a"/>
+                            <text x="12" y="18.5" font-family="JetBrains Mono, monospace" font-size="11" font-weight="600" fill="#7A86E8">Why</text>
+                            <text x="40" y="18.5" font-family="JetBrains Mono, monospace" font-size="11" font-weight="600" fill="#fafafa">PHP</text>
+                            <text x="65" y="18.5" font-family="JetBrains Mono, monospace" font-size="11" fill="#71717a">in 2026</text>
+                        </svg>
+                    </a>
+                </div>
+
+                <div class="badge-code">
+                    <span class="step-label">Markdown</span>
+                    <div class="code-block">
+                        <button class="copy-btn" data-copy='[![Why PHP](https://img.shields.io/badge/Why_PHP-in_2026-7A86E8?style=flat-square&labelColor=18181b)](https://whyphp.dev)'>copy</button>
+                        <pre><code>[![Why PHP](https://img.shields.io/badge/Why_PHP-in_2026-7A86E8?style=flat-square&labelColor=18181b)](https://whyphp.dev)</code></pre>
+                    </div>
+                </div>
+
+                <div class="badge-preview-result">
+                    <span class="step-label">Preview</span>
+                    <a href="https://whyphp.dev" target="_blank">
+                        <img src="https://img.shields.io/badge/Why_PHP-in_2026-7A86E8?style=flat-square&labelColor=18181b" alt="Why PHP in 2026">
+                    </a>
                 </div>
             </section>
 
