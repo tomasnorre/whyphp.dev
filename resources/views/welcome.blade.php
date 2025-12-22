@@ -6,8 +6,8 @@
 
         <!-- Primary Meta Tags -->
         <title>Why PHP in 2026?</title>
-        <meta name="title" content="Why PHP in 2026? The Language That Powers 77% of the Web is Actually Good Now">
-        <meta name="description" content="PHP powers 77% of the web and is actually good now. TypeScript-level types, no build steps, immutability via readonly, enums, and more. No node_modules. Just write code and deploy.">
+        <meta name="title" content="Why PHP in 2026? It's Actually Insanely Good Now">
+        <meta name="description" content="PHP is actually insanely good now. TypeScript-level types, no build steps, immutability via readonly, enums, and more. Just write code and deploy.">
         <meta name="keywords" content="PHP, modern PHP, PHP 8, PHP 8.5, Laravel, Symfony, web development, programming language, type-safe PHP, PHP tutorial, learn PHP, PHP framework, Composer, PHPStan, Pest, readonly, enums">
         <meta name="author" content="Nuno Maduro">
         <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
@@ -22,14 +22,14 @@
         <meta property="og:type" content="website">
         <meta property="og:url" content="https://whyphp.dev">
         <meta property="og:site_name" content="Why PHP">
-        <meta property="og:title" content="Why PHP in 2026? The Language That Powers 77% of the Web is Actually Good Now">
-        <meta property="og:description" content="PHP powers 77% of the web and is actually good now. TypeScript-level types, no build steps, immutability via readonly, enums, and more. Just write code and deploy.">
+        <meta property="og:title" content="Why PHP in 2026? It's Actually Insanely Good Now">
+        <meta property="og:description" content="PHP is actually insanely good now. TypeScript-level types, no build steps, immutability via readonly, enums, and more. Just write code and deploy.">
         <meta property="og:image" content="https://whyphp.dev/images/og-1200x630.png">
         <meta property="og:image:secure_url" content="https://whyphp.dev/images/og-1200x630.png">
         <meta property="og:image:type" content="image/png">
         <meta property="og:image:width" content="1200">
         <meta property="og:image:height" content="630">
-        <meta property="og:image:alt" content="Why PHP in 2026? It powers 77% of the web. And it's actually good now.">
+        <meta property="og:image:alt" content="Why PHP in 2026? It's actually insanely good now.">
         <meta property="og:locale" content="en_US">
 
         <!-- Twitter -->
@@ -37,8 +37,8 @@
         <meta name="twitter:site" content="@enunomaduro">
         <meta name="twitter:creator" content="@enunomaduro">
         <meta name="twitter:url" content="https://whyphp.dev">
-        <meta name="twitter:title" content="Why PHP in 2026? The Language That Powers 77% of the Web is Actually Good Now">
-        <meta name="twitter:description" content="PHP powers 77% of the web and is actually good now. TypeScript-level types, no build steps, immutability via readonly, enums, and more. Just write code and deploy.">
+        <meta name="twitter:title" content="Why PHP in 2026? It's Actually Insanely Good Now">
+        <meta name="twitter:description" content="PHP is actually insanely good now. TypeScript-level types, no build steps, immutability via readonly, enums, and more. Just write code and deploy.">
         <meta name="twitter:image" content="https://whyphp.dev/images/og-twitter-1200x600.png">
         <meta name="twitter:image:alt" content="Why PHP in 2026? - PHP is actually good now">
 
@@ -670,9 +670,21 @@
                     font-size: 0.75rem;
                     height: 280px;
                 }
+                .terminal-tabs {
+                    overflow-x: auto;
+                    -webkit-overflow-scrolling: touch;
+                    scrollbar-width: none;
+                    -ms-overflow-style: none;
+                    justify-content: flex-start;
+                    padding: 0.75rem 0.5rem;
+                }
+                .terminal-tabs::-webkit-scrollbar {
+                    display: none;
+                }
                 .terminal-tab {
                     padding: 0.4rem 0.75rem;
                     font-size: 0.7rem;
+                    flex-shrink: 0;
                 }
                 .terminal-info {
                     padding: 0.75rem 1rem;
@@ -1179,11 +1191,11 @@
             <header>
                 <h1 class="hero-title">Why <span class="highlight">PHP</span> in 2026?</h1>
 
-            <p class="subtitle">It powers 77% of the web. And it's actually good now.</p>
+            <p class="subtitle">It's actually insanely good now.</p>
 
             <p class="hero-text-1">Stop pretending PHP is still the language from 2004. It's not. Modern PHP has JIT compilation, immutability via <code>readonly</code>, enums, attributes, and a type system that rivals TypeScript.</p>
 
-            <p class="hero-text-2">No build steps. No transpilation. No bundling. No 900MB <code>node_modules</code>. Just write code and <a href="https://cloud.laravel.com" target="_blank" rel="noopener">deploy</a>. That's the superpower everyone forgot about.</p>
+            <p class="hero-text-2">No build steps. No transpilation. No bundling. Just write code and <a href="https://cloud.laravel.com" target="_blank" rel="noopener">deploy</a>. That's the superpower everyone forgot about.</p>
 
             <div class="os-selector hero-tabs reveal">
                 <button class="os-tab active" data-hero="value-objects">Value Objects</button>
