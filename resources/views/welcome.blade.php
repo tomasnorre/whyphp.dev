@@ -442,13 +442,12 @@
                 margin: 3rem 0;
                 border-radius: 16px;
                 overflow: hidden;
-                background: rgba(15, 15, 20, 0.9);
+                background: rgba(15, 15, 20, 0.95);
                 backdrop-filter: blur(20px);
                 box-shadow:
-                    0 0 0 1px rgba(122, 134, 232, 0.1),
-                    0 25px 50px -12px rgba(0, 0, 0, 0.6),
-                    0 0 100px -20px rgba(122, 134, 232, 0.15);
-                border: 1px solid rgba(122, 134, 232, 0.15);
+                    0 0 0 1px rgba(30, 40, 60, 0.3),
+                    0 25px 50px -12px rgba(0, 0, 0, 0.6);
+                border: 1px solid rgba(40, 50, 70, 0.4);
                 position: relative;
             }
 
@@ -459,33 +458,14 @@
                 left: 0;
                 right: 0;
                 height: 1px;
-                background: linear-gradient(90deg, transparent, rgba(122, 134, 232, 0.5), transparent);
+                background: linear-gradient(90deg, transparent, rgba(50, 60, 80, 0.5), transparent);
             }
 
             .terminal-header {
                 background: rgba(20, 20, 28, 0.8);
                 padding: 0.875rem 1.25rem;
-                display: flex;
-                align-items: center;
-                gap: 0.75rem;
                 border-bottom: 1px solid rgba(255, 255, 255, 0.05);
             }
-
-            .terminal-dots {
-                display: flex;
-                gap: 8px;
-            }
-
-            .terminal-dot {
-                width: 12px;
-                height: 12px;
-                border-radius: 50%;
-                opacity: 0.8;
-            }
-
-            .terminal-dot.red { background: #ff5f57; }
-            .terminal-dot.yellow { background: #febc2e; }
-            .terminal-dot.green { background: #28c840; }
 
             .terminal-title {
                 flex: 1;
@@ -615,7 +595,6 @@
                 border-radius: 6px;
                 cursor: pointer;
                 transition: all 0.25s ease;
-                position: relative;
             }
 
             .terminal-tab:hover {
@@ -625,8 +604,8 @@
 
             .terminal-tab.active {
                 color: #fff;
-                background: rgba(122, 134, 232, 0.15);
-                border-color: rgba(122, 134, 232, 0.3);
+                background: rgba(40, 50, 70, 0.4);
+                border-color: rgba(50, 60, 80, 0.5);
             }
 
             .terminal-info {
@@ -649,7 +628,7 @@
 
             .terminal-info a:hover {
                 color: #fff;
-                background: rgba(122, 134, 232, 0.1);
+                background: rgba(40, 50, 70, 0.3);
             }
 
             .terminal-info strong {
@@ -1246,11 +1225,6 @@
 
                 <div class="terminal-container">
                     <div class="terminal-header">
-                        <div class="terminal-dots">
-                            <span class="terminal-dot red"></span>
-                            <span class="terminal-dot yellow"></span>
-                            <span class="terminal-dot green"></span>
-                        </div>
                         <div class="terminal-title">~/projects/myapp</div>
                     </div>
                     <div class="terminal-body" id="terminal-output">
@@ -1280,7 +1254,7 @@
                     <div class="terminal-info" id="terminal-info">
                         <a href="https://laravel.com" target="_blank" rel="noopener" id="terminal-link">
                             <strong id="terminal-tool-name">Laravel</strong>
-                            <span id="terminal-tool-desc">The full-stack framework for artisans</span>
+                            <span id="terminal-tool-desc">Rails/Next.js for PHP</span>
                             <span class="arrow">→</span>
                         </a>
                     </div>
@@ -1599,7 +1573,7 @@ composer run dev <span style="color:#5c6370;"># visit http://localhost:8000</spa
             const terminalTools = {
                 laravel: {
                     name: 'Laravel',
-                    desc: 'The full-stack framework for artisans',
+                    desc: 'Rails/Next.js for PHP',
                     url: 'https://laravel.com',
                     lines: [
                         { type: 'prompt', text: '<span class="dollar">$</span> <span class="cmd">laravel</span> <span class="arg">new myapp</span>' },
@@ -1620,7 +1594,7 @@ composer run dev <span style="color:#5c6370;"># visit http://localhost:8000</spa
                 },
                 composer: {
                     name: 'Composer',
-                    desc: 'Dependency manager for PHP',
+                    desc: 'Cargo/npm for PHP',
                     url: 'https://getcomposer.org',
                     lines: [
                         { type: 'prompt', text: '<span class="dollar">$</span> <span class="cmd">composer</span> <span class="arg">require laravel/sanctum</span>' },
@@ -1639,7 +1613,7 @@ composer run dev <span style="color:#5c6370;"># visit http://localhost:8000</spa
                 },
                 phpstan: {
                     name: 'PHPStan',
-                    desc: 'PHP Static Analysis Tool',
+                    desc: 'TypeScript-like type safety',
                     url: 'https://phpstan.org',
                     lines: [
                         { type: 'prompt', text: '<span class="dollar">$</span> <span class="cmd">./vendor/bin/phpstan</span> <span class="arg">analyse</span>' },
@@ -1656,7 +1630,7 @@ composer run dev <span style="color:#5c6370;"># visit http://localhost:8000</spa
                 },
                 pest: {
                     name: 'Pest',
-                    desc: 'The elegant PHP testing framework',
+                    desc: 'Jest-style testing',
                     url: 'https://pestphp.com',
                     lines: [
                         { type: 'prompt', text: '<span class="dollar">$</span> <span class="cmd">./vendor/bin/pest</span>' },
@@ -1675,7 +1649,7 @@ composer run dev <span style="color:#5c6370;"># visit http://localhost:8000</spa
                 },
                 pint: {
                     name: 'Pint',
-                    desc: 'PHP code style fixer',
+                    desc: 'Code style fixer',
                     url: 'https://laravel.com/docs/pint',
                     lines: [
                         { type: 'prompt', text: '<span class="dollar">$</span> <span class="cmd">./vendor/bin/pint</span>' },
@@ -1692,7 +1666,7 @@ composer run dev <span style="color:#5c6370;"># visit http://localhost:8000</spa
                 },
                 rector: {
                     name: 'Rector',
-                    desc: 'Automated PHP refactoring',
+                    desc: 'Automated refactoring',
                     url: 'https://getrector.com',
                     lines: [
                         { type: 'prompt', text: '<span class="dollar">$</span> <span class="cmd">./vendor/bin/rector</span> <span class="arg">--dry-run</span>' },
@@ -1731,7 +1705,6 @@ composer run dev <span style="color:#5c6370;"># visit http://localhost:8000</spa
                     output.appendChild(div);
                 });
 
-                // Update tool info
                 document.getElementById('terminal-link').href = tool.url;
                 document.getElementById('terminal-tool-name').textContent = tool.name;
                 document.getElementById('terminal-tool-desc').textContent = tool.desc;
