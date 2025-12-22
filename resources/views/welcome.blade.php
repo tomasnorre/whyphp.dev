@@ -266,39 +266,6 @@
                 font-weight: 600;
             }
 
-            .tools {
-                display: grid;
-                grid-template-columns: repeat(2, 1fr);
-                gap: 1rem;
-                margin: 2rem 0;
-            }
-
-            .tool {
-                display: block;
-                padding: 1rem;
-                background: #18181b;
-                border-radius: 8px;
-                border: 1px solid #27272a;
-                text-decoration: none;
-                transition: border-color 0.2s, background 0.2s;
-            }
-
-            .tool:hover {
-                border-color: #7A86E8;
-                background: #1f1f23;
-            }
-
-            .tool strong {
-                display: block;
-                margin-bottom: 0.25rem;
-                color: #fafafa;
-            }
-
-            .tool span {
-                font-size: 0.875rem;
-                color: #71717a;
-            }
-
             .os-selector {
                 display: flex;
                 gap: 0.5rem;
@@ -417,55 +384,6 @@
                 color: #7A86E8;
             }
 
-            .share-section {
-                display: flex;
-                align-items: center;
-                gap: 1rem;
-                margin: 2rem 0;
-                flex-wrap: wrap;
-            }
-
-            .share-label {
-                font-size: 0.875rem;
-                color: #71717a;
-                font-family: 'JetBrains Mono', monospace;
-            }
-
-            .share-btn {
-                display: inline-flex;
-                align-items: center;
-                gap: 0.5rem;
-                padding: 0.5rem 1rem;
-                background: #18181b;
-                border: 1px solid #27272a;
-                border-radius: 6px;
-                color: #a1a1aa;
-                font-family: 'JetBrains Mono', monospace;
-                font-size: 0.875rem;
-                line-height: 1.5;
-                text-decoration: none;
-                cursor: pointer;
-                transition: all 0.2s;
-            }
-
-            .share-btn:hover {
-                border-color: #7A86E8;
-                color: #fff;
-                background: #1f1f23;
-            }
-
-            .share-btn svg {
-                width: 16px;
-                height: 16px;
-                fill: currentColor;
-            }
-
-            .share-btn.copied {
-                border-color: #7A86E8;
-                background: #7A86E8;
-                color: #fff;
-            }
-
             @media (max-width: 640px) {
                 .directory-grid {
                     grid-template-columns: 1fr;
@@ -488,6 +406,263 @@
                 width: 100%;
                 height: 100%;
                 border: none;
+            }
+
+            /* Animated Terminal */
+            .terminal-container {
+                margin: 3rem 0;
+                border-radius: 16px;
+                overflow: hidden;
+                background: rgba(15, 15, 20, 0.9);
+                backdrop-filter: blur(20px);
+                box-shadow:
+                    0 0 0 1px rgba(122, 134, 232, 0.1),
+                    0 25px 50px -12px rgba(0, 0, 0, 0.6),
+                    0 0 100px -20px rgba(122, 134, 232, 0.15);
+                border: 1px solid rgba(122, 134, 232, 0.15);
+                position: relative;
+            }
+
+            .terminal-container::before {
+                content: '';
+                position: absolute;
+                top: 0;
+                left: 0;
+                right: 0;
+                height: 1px;
+                background: linear-gradient(90deg, transparent, rgba(122, 134, 232, 0.5), transparent);
+            }
+
+            .terminal-header {
+                background: rgba(20, 20, 28, 0.8);
+                padding: 0.875rem 1.25rem;
+                display: flex;
+                align-items: center;
+                gap: 0.75rem;
+                border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+            }
+
+            .terminal-dots {
+                display: flex;
+                gap: 8px;
+            }
+
+            .terminal-dot {
+                width: 12px;
+                height: 12px;
+                border-radius: 50%;
+                opacity: 0.8;
+            }
+
+            .terminal-dot.red { background: #ff5f57; }
+            .terminal-dot.yellow { background: #febc2e; }
+            .terminal-dot.green { background: #28c840; }
+
+            .terminal-title {
+                flex: 1;
+                text-align: center;
+                font-size: 0.75rem;
+                color: #52525b;
+                font-family: 'JetBrains Mono', monospace;
+                letter-spacing: 0.5px;
+            }
+
+            .terminal-body {
+                padding: 1.5rem 1.75rem;
+                min-height: 200px;
+                font-family: 'JetBrains Mono', monospace;
+                font-size: 0.8125rem;
+                line-height: 1.7;
+                background: linear-gradient(180deg, rgba(15, 15, 20, 0.5) 0%, rgba(10, 10, 15, 0.8) 100%);
+            }
+
+            .terminal-line {
+                margin-bottom: 0.125rem;
+                opacity: 0;
+                transform: translateY(5px);
+                animation: terminalFadeIn 0.3s ease forwards;
+                white-space: pre;
+            }
+
+            .terminal-line.prompt {
+                color: #71717a;
+            }
+
+            .terminal-line .dollar {
+                color: #27ca40;
+                margin-right: 0.5rem;
+            }
+
+            .terminal-line .cmd {
+                color: #7A86E8;
+                font-weight: 500;
+            }
+
+            .terminal-line .arg {
+                color: #fbbf24;
+            }
+
+            .terminal-line.output {
+                color: #52525b;
+            }
+
+            .terminal-line.success {
+                color: #34d399;
+            }
+
+            .terminal-line.info {
+                color: #7A86E8;
+            }
+
+            .terminal-line.ascii {
+                color: #7A86E8;
+                line-height: 1.15;
+            }
+
+            .terminal-line .version {
+                color: #c084fc;
+            }
+
+            .terminal-line .number {
+                color: #fbbf24;
+            }
+
+            .terminal-line .path {
+                color: #38bdf8;
+            }
+
+            .terminal-line .checkmark {
+                color: #34d399;
+            }
+
+            .terminal-line .error-count {
+                color: #f87171;
+            }
+
+            .terminal-line .progress {
+                color: #34d399;
+            }
+
+            .terminal-cursor {
+                display: inline-block;
+                width: 8px;
+                height: 15px;
+                background: #7A86E8;
+                animation: cursorBlink 1.2s ease-in-out infinite;
+                vertical-align: middle;
+                margin-left: 2px;
+                border-radius: 1px;
+            }
+
+            @keyframes cursorBlink {
+                0%, 40% { opacity: 1; }
+                50%, 90% { opacity: 0; }
+                100% { opacity: 1; }
+            }
+
+            @keyframes terminalFadeIn {
+                to {
+                    opacity: 1;
+                    transform: translateY(0);
+                }
+            }
+
+            .terminal-tabs {
+                display: flex;
+                justify-content: center;
+                gap: 0.25rem;
+                padding: 0.75rem 1rem;
+                background: rgba(10, 10, 15, 0.9);
+                border-top: 1px solid rgba(255, 255, 255, 0.03);
+            }
+
+            .terminal-tab {
+                padding: 0.5rem 1rem;
+                font-family: 'JetBrains Mono', monospace;
+                font-size: 0.75rem;
+                color: #52525b;
+                background: transparent;
+                border: 1px solid transparent;
+                border-radius: 6px;
+                cursor: pointer;
+                transition: all 0.25s ease;
+                position: relative;
+            }
+
+            .terminal-tab:hover {
+                color: #a1a1aa;
+                background: rgba(255, 255, 255, 0.03);
+            }
+
+            .terminal-tab.active {
+                color: #fff;
+                background: rgba(122, 134, 232, 0.15);
+                border-color: rgba(122, 134, 232, 0.3);
+            }
+
+            .terminal-info {
+                padding: 1rem 1.5rem;
+                background: rgba(10, 10, 15, 0.95);
+                border-top: 1px solid rgba(255, 255, 255, 0.03);
+                text-align: center;
+            }
+
+            .terminal-info a {
+                display: inline-flex;
+                align-items: center;
+                gap: 0.75rem;
+                color: #a1a1aa;
+                text-decoration: none;
+                transition: all 0.2s ease;
+                padding: 0.5rem 1rem;
+                border-radius: 8px;
+            }
+
+            .terminal-info a:hover {
+                color: #fff;
+                background: rgba(122, 134, 232, 0.1);
+            }
+
+            .terminal-info strong {
+                color: #fff;
+                font-size: 0.9375rem;
+            }
+
+            .terminal-info span {
+                font-size: 0.8125rem;
+                color: #52525b;
+            }
+
+            .terminal-info a:hover span {
+                color: #71717a;
+            }
+
+            .terminal-info .arrow {
+                color: #7A86E8;
+                transition: transform 0.2s ease;
+            }
+
+            .terminal-info a:hover .arrow {
+                transform: translateX(3px);
+            }
+
+            @media (max-width: 640px) {
+                .terminal-body {
+                    padding: 1rem;
+                    font-size: 0.75rem;
+                    min-height: 150px;
+                }
+                .terminal-tab {
+                    padding: 0.4rem 0.75rem;
+                    font-size: 0.7rem;
+                }
+                .terminal-info {
+                    padding: 0.75rem 1rem;
+                }
+                .terminal-info a {
+                    flex-direction: column;
+                    gap: 0.25rem;
+                }
             }
 
             footer {
@@ -523,9 +698,6 @@
             }
 
             @media (max-width: 640px) {
-                .tools {
-                    grid-template-columns: 1fr;
-                }
                 .nav {
                     gap: 1rem;
                     flex-wrap: wrap;
@@ -581,11 +753,6 @@
                 animation: fadeInUp 0.8s ease forwards 0.6s;
             }
 
-            .hero-share {
-                opacity: 0;
-                animation: fadeInUp 0.8s ease forwards 0.75s;
-            }
-
             /* PHP highlight */
             .highlight {
                 display: inline-block;
@@ -604,53 +771,6 @@
                 transform: translateY(0);
             }
 
-            /* Staggered children for tools grid */
-            .stagger-children.visible .tool:nth-child(1) { transition-delay: 0.05s; }
-            .stagger-children.visible .tool:nth-child(2) { transition-delay: 0.1s; }
-            .stagger-children.visible .tool:nth-child(3) { transition-delay: 0.15s; }
-            .stagger-children.visible .tool:nth-child(4) { transition-delay: 0.2s; }
-            .stagger-children.visible .tool:nth-child(5) { transition-delay: 0.25s; }
-            .stagger-children.visible .tool:nth-child(6) { transition-delay: 0.3s; }
-
-            .stagger-children .tool {
-                opacity: 0;
-                transform: translateY(20px);
-                transition: opacity 0.5s ease, transform 0.5s ease,
-                            border-color 0.3s ease, background 0.3s ease, box-shadow 0.3s ease;
-            }
-
-            .stagger-children.visible .tool {
-                opacity: 1;
-                transform: translateY(0);
-            }
-
-            /* Enhanced tool hover with depth */
-            .tool {
-                position: relative;
-                overflow: hidden;
-            }
-
-            .tool::before {
-                content: '';
-                position: absolute;
-                top: 0;
-                left: -100%;
-                width: 100%;
-                height: 100%;
-                background: linear-gradient(90deg, transparent, rgba(122, 134, 232, 0.1), transparent);
-                transition: left 0.5s ease;
-            }
-
-            .tool:hover::before {
-                left: 100%;
-            }
-
-            .tool:hover {
-                transform: translateY(-4px) scale(1.02);
-                border-color: #7A86E8;
-                background: #1f1f23;
-                box-shadow: 0 12px 40px rgba(122, 134, 232, 0.2);
-            }
 
             /* Share button enhanced hover */
             .share-btn {
@@ -1050,34 +1170,47 @@
 
                 <p>Modern PHP isn't just better. It's unrecognizable from its past.</p>
 
-                <div class="tools stagger-children">
-                    <a href="https://laravel.com" target="_blank" class="tool">
-                        <strong>Laravel</strong>
-                        <span>Rails/Next.js for PHP</span>
-                    </a>
-                    <a href="https://getcomposer.org" target="_blank" class="tool">
-                        <strong>Composer</strong>
-                        <span>Cargo/npm for PHP</span>
-                    </a>
-                    <a href="https://phpstan.org" target="_blank" class="tool">
-                        <strong>PHPStan</strong>
-                        <span>TypeScript-like type safety</span>
-                    </a>
-                    <a href="https://pestphp.com" target="_blank" class="tool">
-                        <strong>Pest</strong>
-                        <span>Jest-style testing</span>
-                    </a>
-                    <a href="https://laravel.com/docs/pint" target="_blank" class="tool">
-                        <strong>Pint</strong>
-                        <span>Code style fixer</span>
-                    </a>
-                    <a href="https://getrector.com" target="_blank" class="tool">
-                        <strong>Rector</strong>
-                        <span>Automated refactoring</span>
-                    </a>
+                <div class="terminal-container">
+                    <div class="terminal-header">
+                        <div class="terminal-dots">
+                            <span class="terminal-dot red"></span>
+                            <span class="terminal-dot yellow"></span>
+                            <span class="terminal-dot green"></span>
+                        </div>
+                        <div class="terminal-title">~/projects/myapp</div>
+                    </div>
+                    <div class="terminal-body" id="terminal-output">
+                        <div class="terminal-line prompt"><span class="dollar">$</span> <span class="cmd">laravel</span> <span class="arg">new myapp</span></div>
+                        <div class="terminal-line output"></div>
+                        <div class="terminal-line ascii">   <span class="info">_                               _</span></div>
+                        <div class="terminal-line ascii">  <span class="info">| |                             | |</span></div>
+                        <div class="terminal-line ascii">  <span class="info">| |     __ _ _ __ __ ___   _____| |</span></div>
+                        <div class="terminal-line ascii">  <span class="info">| |    / _` | '__/ _` \ \ / / _ \ |</span></div>
+                        <div class="terminal-line ascii">  <span class="info">| |___| (_| | | | (_| |\ V /  __/ |</span></div>
+                        <div class="terminal-line ascii">  <span class="info">|______\__,_|_|  \__,_| \_/ \___|_|</span></div>
+                        <div class="terminal-line output"></div>
+                        <div class="terminal-line output">  Creating a <span class="version">laravel/laravel</span> project...</div>
+                        <div class="terminal-line output"></div>
+                        <div class="terminal-line success">  <span class="checkmark">✓</span> Application ready in <span class="path">[myapp]</span>.</div>
+                        <div class="terminal-line success">  <span class="checkmark">✓</span> Built with love.</div>
+                        <div class="terminal-line prompt"><span class="terminal-cursor"></span></div>
+                    </div>
+                    <div class="terminal-tabs">
+                        <button class="terminal-tab active" data-terminal="laravel">Laravel</button>
+                        <button class="terminal-tab" data-terminal="composer">Composer</button>
+                        <button class="terminal-tab" data-terminal="phpstan">PHPStan</button>
+                        <button class="terminal-tab" data-terminal="pest">Pest</button>
+                        <button class="terminal-tab" data-terminal="pint">Pint</button>
+                        <button class="terminal-tab" data-terminal="rector">Rector</button>
+                    </div>
+                    <div class="terminal-info" id="terminal-info">
+                        <a href="https://laravel.com" target="_blank" id="terminal-link">
+                            <strong id="terminal-tool-name">Laravel</strong>
+                            <span id="terminal-tool-desc">The full-stack framework for artisans</span>
+                            <span class="arrow">→</span>
+                        </a>
+                    </div>
                 </div>
-
-                <p>The PHP ecosystem in 2026 rivals anything out there. TypeScript-level type safety. Jest-level testing. Rust-level tooling. This isn't your grandfather's PHP.</p>
             </section>
 
             <hr>
@@ -1383,46 +1516,154 @@ composer run dev <span style="color:#5c6370;"># visit http://localhost:8000</spa
                 });
             });
 
-            // Share functionality
-            const shareUrl = 'https://whyphp.dev';
-            const shareText = 'Why PHP in 2026? TypeScript-level types, no build steps, immutability by default via readonly, enums, and more.';
+            // ===== ANIMATED TERMINAL =====
+            const terminalTools = {
+                laravel: {
+                    name: 'Laravel',
+                    desc: 'The full-stack framework for artisans',
+                    url: 'https://laravel.com',
+                    lines: [
+                        { type: 'prompt', text: '<span class="dollar">$</span> <span class="cmd">laravel</span> <span class="arg">new myapp</span>' },
+                        { type: 'output', text: '' },
+                        { type: 'ascii', text: '   <span class="info">_                               _</span>' },
+                        { type: 'ascii', text: '  <span class="info">| |                             | |</span>' },
+                        { type: 'ascii', text: '  <span class="info">| |     __ _ _ __ __ ___   _____| |</span>' },
+                        { type: 'ascii', text: '  <span class="info">| |    / _` | \'__/ _` \\ \\ / / _ \\ |</span>' },
+                        { type: 'ascii', text: '  <span class="info">| |___| (_| | | | (_| |\\ V /  __/ |</span>' },
+                        { type: 'ascii', text: '  <span class="info">|______\\__,_|_|  \\__,_| \\_/ \\___|_|</span>' },
+                        { type: 'output', text: '' },
+                        { type: 'output', text: '  Creating a <span class="version">laravel/laravel</span> project...' },
+                        { type: 'output', text: '' },
+                        { type: 'success', text: '  <span class="checkmark">✓</span> Application ready in <span class="path">[myapp]</span>.' },
+                        { type: 'success', text: '  <span class="checkmark">✓</span> Built with love.' },
+                        { type: 'cursor', text: '' }
+                    ]
+                },
+                composer: {
+                    name: 'Composer',
+                    desc: 'Dependency manager for PHP',
+                    url: 'https://getcomposer.org',
+                    lines: [
+                        { type: 'prompt', text: '<span class="dollar">$</span> <span class="cmd">composer</span> <span class="arg">require laravel/sanctum</span>' },
+                        { type: 'output', text: '' },
+                        { type: 'output', text: '  <span class="path">./composer.json</span> has been updated' },
+                        { type: 'output', text: '  Running composer update <span class="version">laravel/sanctum</span>' },
+                        { type: 'output', text: '  Loading composer repositories with package information' },
+                        { type: 'output', text: '  Updating dependencies' },
+                        { type: 'output', text: '' },
+                        { type: 'output', text: '  Lock file operations: <span class="number">1</span> install, <span class="number">0</span> updates, <span class="number">0</span> removals' },
+                        { type: 'success', text: '    - Locking <span class="version">laravel/sanctum</span> (<span class="number">v4.0.6</span>)' },
+                        { type: 'output', text: '' },
+                        { type: 'success', text: '  <span class="checkmark">✓</span> Package <span class="version">laravel/sanctum</span> installed successfully' },
+                        { type: 'cursor', text: '' }
+                    ]
+                },
+                phpstan: {
+                    name: 'PHPStan',
+                    desc: 'PHP Static Analysis Tool',
+                    url: 'https://phpstan.org',
+                    lines: [
+                        { type: 'prompt', text: '<span class="dollar">$</span> <span class="cmd">./vendor/bin/phpstan</span> <span class="arg">analyse</span>' },
+                        { type: 'output', text: '' },
+                        { type: 'output', text: '  <span class="number">42</span>/<span class="number">42</span> <span class="progress">[▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓]</span> 100%' },
+                        { type: 'output', text: '' },
+                        { type: 'output', text: '  ───────────────────────────────────────────────────' },
+                        { type: 'output', text: '' },
+                        { type: 'success', text: '  <span class="checkmark">[OK]</span> No errors' },
+                        { type: 'output', text: '' },
+                        { type: 'output', text: '  <span class="output">💡 Tip: PHPStan is at level 9 — maximum strictness</span>' },
+                        { type: 'cursor', text: '' }
+                    ]
+                },
+                pest: {
+                    name: 'Pest',
+                    desc: 'The elegant PHP testing framework',
+                    url: 'https://pestphp.com',
+                    lines: [
+                        { type: 'prompt', text: '<span class="dollar">$</span> <span class="cmd">./vendor/bin/pest</span>' },
+                        { type: 'output', text: '' },
+                        { type: 'output', text: '  <span class="version">PEST</span>  <span class="output">v4.0</span>' },
+                        { type: 'output', text: '' },
+                        { type: 'success', text: '  <span class="checkmark">✓</span> it can create a book                     <span class="output">0.02s</span>' },
+                        { type: 'success', text: '  <span class="checkmark">✓</span> it can publish a book                    <span class="output">0.01s</span>' },
+                        { type: 'success', text: '  <span class="checkmark">✓</span> it validates required fields             <span class="output">0.01s</span>' },
+                        { type: 'success', text: '  <span class="checkmark">✓</span> it belongs to an author                  <span class="output">0.02s</span>' },
+                        { type: 'output', text: '' },
+                        { type: 'success', text: '  Tests:    <span class="number">4 passed</span> (<span class="number">12</span> assertions)' },
+                        { type: 'output', text: '  Duration: <span class="number">0.06s</span>' },
+                        { type: 'cursor', text: '' }
+                    ]
+                },
+                pint: {
+                    name: 'Pint',
+                    desc: 'PHP code style fixer',
+                    url: 'https://laravel.com/docs/pint',
+                    lines: [
+                        { type: 'prompt', text: '<span class="dollar">$</span> <span class="cmd">./vendor/bin/pint</span>' },
+                        { type: 'output', text: '' },
+                        { type: 'output', text: '  <span class="version">PINT</span>  <span class="output">v1.18</span>' },
+                        { type: 'output', text: '' },
+                        { type: 'output', text: '  <span class="checkmark">✓</span> <span class="path">app/Models/Book.php</span>                    <span class="output">fixed</span>' },
+                        { type: 'output', text: '  <span class="checkmark">✓</span> <span class="path">app/Http/Controllers/BookController.php</span> <span class="output">fixed</span>' },
+                        { type: 'output', text: '  <span class="checkmark">✓</span> <span class="path">tests/Feature/BookTest.php</span>             <span class="output">fixed</span>' },
+                        { type: 'output', text: '' },
+                        { type: 'success', text: '  <span class="number">3</span> files fixed' },
+                        { type: 'cursor', text: '' }
+                    ]
+                },
+                rector: {
+                    name: 'Rector',
+                    desc: 'Automated PHP refactoring',
+                    url: 'https://getrector.com',
+                    lines: [
+                        { type: 'prompt', text: '<span class="dollar">$</span> <span class="cmd">./vendor/bin/rector</span> <span class="arg">--dry-run</span>' },
+                        { type: 'output', text: '' },
+                        { type: 'output', text: '  <span class="number">12</span>/<span class="number">12</span> <span class="progress">[▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓]</span> 100%' },
+                        { type: 'output', text: '' },
+                        { type: 'output', text: '  <span class="number">3</span> files would have been changed:' },
+                        { type: 'output', text: '' },
+                        { type: 'output', text: '  <span class="checkmark">↳</span> <span class="version">AddVoidReturnTypeWhereNoReturnRector</span>' },
+                        { type: 'output', text: '  <span class="checkmark">↳</span> <span class="version">ReadOnlyClassRector</span>' },
+                        { type: 'output', text: '  <span class="checkmark">↳</span> <span class="version">TypedPropertyFromStrictConstructorRector</span>' },
+                        { type: 'output', text: '' },
+                        { type: 'success', text: '  <span class="checkmark">[OK]</span> Rector is done! <span class="number">3</span> files with changes' },
+                        { type: 'cursor', text: '' }
+                    ]
+                }
+            };
 
-            document.getElementById('share-twitter').href =
-                `https://twitter.com/intent/tweet?text=${encodeURIComponent(shareText)}&url=${encodeURIComponent(shareUrl)}`;
+            function renderTerminal(tab) {
+                const tool = terminalTools[tab];
+                const output = document.getElementById('terminal-output');
+                output.innerHTML = '';
 
-            document.getElementById('share-linkedin').href =
-                `https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(shareUrl)}`;
+                tool.lines.forEach((line, index) => {
+                    const div = document.createElement('div');
+                    div.className = 'terminal-line ' + line.type;
+                    div.style.animationDelay = (index * 0.08) + 's';
 
-            document.getElementById('share-copy').addEventListener('click', async () => {
-                await navigator.clipboard.writeText(shareUrl);
-                const btn = document.getElementById('share-copy');
-                btn.classList.add('copied');
-                btn.innerHTML = '<svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg> Copied!';
-                setTimeout(() => {
-                    btn.classList.remove('copied');
-                    btn.innerHTML = '<svg viewBox="0 0 24 24"><path d="M16 1H4c-1.1 0-2 .9-2 2v14h2V3h12V1zm3 4H8c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h11c1.1 0 2-.9 2-2V7c0-1.1-.9-2-2-2zm0 16H8V7h11v14z"/></svg> Copy link';
-                }, 2000);
-            });
+                    if (line.type === 'cursor') {
+                        div.classList.add('prompt');
+                        div.innerHTML = '<span class="terminal-cursor"></span>';
+                    } else {
+                        div.innerHTML = line.text;
+                    }
 
-            // Video share functionality
-            const videoUrl = 'https://www.youtube.com/watch?v=PLkLhIwVfMk';
-            const videoShareText = 'Why PHP in 2026? Watch this:';
+                    output.appendChild(div);
+                });
 
-            document.getElementById('share-video-twitter').href =
-                `https://twitter.com/intent/tweet?text=${encodeURIComponent(videoShareText)}&url=${encodeURIComponent(videoUrl)}`;
+                // Update tool info
+                document.getElementById('terminal-link').href = tool.url;
+                document.getElementById('terminal-tool-name').textContent = tool.name;
+                document.getElementById('terminal-tool-desc').textContent = tool.desc;
+            }
 
-            document.getElementById('share-video-linkedin').href =
-                `https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(videoUrl)}`;
-
-            document.getElementById('share-video-copy').addEventListener('click', async () => {
-                await navigator.clipboard.writeText(videoUrl);
-                const btn = document.getElementById('share-video-copy');
-                btn.classList.add('copied');
-                btn.innerHTML = '<svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg> Copied!';
-                setTimeout(() => {
-                    btn.classList.remove('copied');
-                    btn.innerHTML = '<svg viewBox="0 0 24 24"><path d="M16 1H4c-1.1 0-2 .9-2 2v14h2V3h12V1zm3 4H8c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h11c1.1 0 2-.9 2-2V7c0-1.1-.9-2-2-2zm0 16H8V7h11v14z"/></svg> Copy link';
-                }, 2000);
+            document.querySelectorAll('.terminal-tab').forEach(tab => {
+                tab.addEventListener('click', () => {
+                    document.querySelectorAll('.terminal-tab').forEach(t => t.classList.remove('active'));
+                    tab.classList.add('active');
+                    renderTerminal(tab.dataset.terminal);
+                });
             });
 
             // ===== SHARE MODAL =====
