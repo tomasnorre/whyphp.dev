@@ -1329,6 +1329,7 @@
                     </div>
                     <div class="terminal-tabs">
                         <button class="terminal-tab active" data-terminal="laravel">Laravel</button>
+                        <button class="terminal-tab" data-terminal="symfony">Symfony</button>
                         <button class="terminal-tab" data-terminal="composer">Composer</button>
                         <button class="terminal-tab" data-terminal="phpstan">PHPStan</button>
                         <button class="terminal-tab" data-terminal="pest">Pest</button>
@@ -1673,6 +1674,22 @@ composer run dev <span style="color:#5c6370;"># visit http://localhost:8000</spa
                         { type: 'output', text: '' },
                         { type: 'success', text: '  <span class="checkmark">✓</span> Application ready in <span class="path">[myapp]</span>.' },
                         { type: 'success', text: '  <span class="checkmark">✓</span> Built with love.' },
+                        { type: 'cursor', text: '' }
+                    ]
+                },
+                symfony: {
+                    name: 'Symfony',
+                    desc: 'Build with confidence at any scale',
+                    url: 'https://symfony.com',
+                    lines: [
+                        { type: 'prompt', text: '<span class="dollar">$</span> <span class="cmd">symfony</span> <span class="arg">new myapp</span>' },
+                        { type: 'output', text: '' },
+                        { type: 'ascii', text: '  <span class="info">* Creating a new Symfony project with Composer</span>' },
+                        { type: 'ascii', text: '  <span class="info">* Setting up the project under Git version control</span>' },
+                        { type: 'ascii', text: '  <span class="info">(running git init /Projects/myapp)</span>' },
+                        { type: 'ascii', text: '  <span class="info"></span>' },
+                        { type: 'ascii', text: '  <span class="info">[OK] Your project is now ready in /Projects/myapp     </span>' },
+                        { type: 'output', text: '' },
                         { type: 'cursor', text: '' }
                     ]
                 },
